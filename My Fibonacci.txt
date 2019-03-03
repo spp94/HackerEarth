@@ -1,0 +1,55 @@
+import java.io.*;
+
+import java.util.*;
+
+class A
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+Scanner sc=new Scanner(System.in);
+
+int a=sc.nextInt(),b=sc.nextInt(),c=sc.nextInt();
+
+if(c==1)
+
+{
+
+System.out.println(a);
+
+}
+
+else if(c==2)
+
+{
+
+System.out.println(b);
+
+}
+
+else
+
+{
+
+int sum=0;
+
+for(int i=3;i<=c;i++)
+
+{
+
+sum=a+b;
+a=b;
+b=sum;
+
+}
+
+System.out.println(sum);
+
+}
+
+}
+
+}

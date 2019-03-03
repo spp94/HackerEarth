@@ -1,0 +1,49 @@
+import java.util.*;
+
+import java.io.*;
+
+class A
+
+{
+
+
+public static void main(String...args) throws Exception
+{
+
+Scanner sc=new Scanner(System.in);
+
+int k=sc.nextInt();
+
+Set<String> hateword=new HashSet<String>();
+
+for(int i=0;i<k;i++)
+hateword.add(sc.next());
+
+int nm=sc.nextInt();
+
+sc.nextLine();
+
+String[] str=sc.nextLine().split(" ");
+
+StringBuilder sb=new StringBuilder();
+
+for(String wr: str)
+
+{
+if(!hateword.contains(wr))
+
+{
+sb.append(Character.toUpperCase(wr.charAt(0)));
+
+sb.append(".");
+
+}
+
+}
+
+System.out.println(sb.deleteCharAt(sb.length()-1));
+
+}
+
+
+}
