@@ -1,0 +1,52 @@
+#include<iostream>
+
+#define ll long long int
+
+using namespace std;
+
+int main()
+
+{
+
+ll t;
+
+cin>>t;
+
+while(t-->0)
+
+{
+
+ll a,b;
+
+cin>>a>>b;
+
+ll c=a^b;
+
+ll count=0;
+
+while(c!=0)
+
+{
+
+ll r=c%2;
+
+c=c/2;
+
+if(r==1)
+
+count++;
+
+else
+
+continue;
+
+}
+
+cout<<count<<endl;
+
+}
+
+return 0;
+
+}
+

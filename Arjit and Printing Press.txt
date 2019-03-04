@@ -1,0 +1,67 @@
+import java.io.*;
+
+import java.util.*;
+
+class Shubham
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+Scanner sc=new Scanner(System.in);
+
+long t=sc.nextLong();
+
+for(long j=1;j<=t;j++)
+
+{
+
+String a=sc.next(),b=sc.next();
+
+char[] s1=a.toCharArray();
+
+char[] s2=b.toCharArray();
+
+Arrays.sort(s2);
+
+int count=0,i=0;
+
+while(count<s2.length && i<s1.length)
+
+{
+
+if(s2[count]<s1[i])
+
+{
+
+s1[i]=s2[count];
+
+count++;
+
+i++;
+
+}
+
+else
+
+{
+
+i++;
+
+}
+
+}
+
+String s=new String(s1);
+
+System.out.println(s1);
+
+}
+
+}
+
+}

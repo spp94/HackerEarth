@@ -1,0 +1,62 @@
+import java.io.*;
+
+import java.util.*;
+
+class H
+
+{
+
+public static void main(String...args)throws Exception
+
+{
+
+Scanner sc=new Scanner(System.in);
+
+String s=sc.next();
+
+char n[]={'a','b','c','d','e','f','g','h','i'};
+
+int l=s.length();
+
+long sum=0;
+
+for(int i=0;i<l;i++)
+
+{
+
+char ch=s.charAt(i);
+
+for(int j=0;j<9;j++)
+
+{
+
+if(n[j]==ch)
+
+{
+
+sum+=(j+1);
+
+break;
+
+}
+
+else
+
+continue;
+
+}
+
+}
+
+if(sum%3==0)
+
+System.out.println("YES");
+
+else
+
+System.out.println("NO");
+
+}
+
+}
+

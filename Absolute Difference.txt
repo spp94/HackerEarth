@@ -1,0 +1,84 @@
+import java.io.*;
+
+import java.util.*;
+
+import java.math.*;
+
+class E
+
+{
+
+public static void main(String...args)throws Exception
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int t=Integer.parseInt(in.readLine());
+
+for(int i=1;i<=t;i++)
+
+{
+
+String []str=in.readLine().split(" ");
+
+int n=Integer.parseInt(str[0]),d=Integer.parseInt(str[1]);
+
+String []s=in.readLine().split(" ");
+
+int a[]=new int[n];
+
+for(int j=0;j<n;j++)
+
+{
+
+a[j]=Integer.parseInt(s[j]);
+
+}
+
+
+int c=0;
+
+for(int j=0;j<n-1;j++)
+
+{
+
+int n1=a[j];
+
+int n2=a[j+1];
+
+int diff=Math.abs(n1-n2);
+
+if(diff<=d)
+
+{
+
+c++;
+
+break;
+
+}
+
+}
+
+if(c==1)
+
+{
+
+System.out.println("YES");
+
+}
+
+else
+
+{
+
+System.out.println("NO");
+
+}
+
+}
+
+}
+
+}
