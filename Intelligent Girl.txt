@@ -1,0 +1,45 @@
+import java.io.*;
+
+class intelligent_girl
+
+{
+
+public static void main(String args[])throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+String s=in.readLine();
+
+int l=s.length();
+
+for(int i=0;i<l;i++)
+
+{
+
+int c=0;
+
+for(int j=i;j<l;j++)
+
+{
+
+char ch=s.charAt(j);
+
+int y=(int)ch;
+
+if(y%2==0)
+
+c++;
+
+}
+
+System.out.print(c+" ");
+
+}
+
+System.out.println();
+
+}
+
+}
