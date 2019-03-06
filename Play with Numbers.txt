@@ -1,0 +1,52 @@
+import java.util.*;
+
+import java.math.*;
+
+class Hello
+
+{
+
+public static void main(String args[])throws Exception
+
+{
+
+Scanner sc=new Scanner(System.in);
+
+long t=sc.nextLong();
+
+while(t-->0)
+
+{
+
+long z=sc.nextLong(),n=sc.nextLong(),m=sc.nextLong();
+
+long count=0;
+
+for(long i=1;i<=Math.sqrt(z);i++)
+{
+
+if(z%i==0)
+{
+
+if((z/i)<=n && i<=m)
+
+count++;
+
+if((z/i)<=m && i<=n)
+
+count++;
+
+if(i*i==z)
+
+count--;
+
+}
+
+}
+System.out.println(count);
+
+}
+
+}
+
+}
