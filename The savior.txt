@@ -1,0 +1,98 @@
+import java.io.*;
+
+import java.math.*;
+
+import java.util.*;
+
+class Yuvi
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+long t=Long.parseLong(in.readLine());
+
+for(long i=1;i<=t;i++)
+
+{
+
+long n=Long.parseLong(in.readLine());
+
+String s=in.readLine();
+
+String []str=s.split(" ");
+
+int l=str.length;
+
+long a[]=new long[l];
+
+for(int j=0;j<l;j++)
+
+{
+
+a[j]=Long.parseLong(str[j]);
+
+}
+
+long sum=0;
+
+for(int j=0;j<l;j++)
+
+{
+
+long s1=a[j];
+
+for(int k=j+1;k<l;k++)
+
+{
+
+s1=s1+a[k];
+
+if(s1%2==0 && a[j]!=a[k])
+
+{
+
+//System.out.println(a[j]+" + "+a[k]+" = "+s1);
+
+sum++;
+
+s1=a[j];
+
+}
+
+else
+
+{
+
+s1=a[j];
+
+}
+
+}
+
+}
+
+
+System.out.println(sum);
+
+
+}
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+

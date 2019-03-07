@@ -1,0 +1,122 @@
+import java.io.*;
+
+import java.math.*;
+
+import java.util.*;
+
+class Yu
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+String s=in.readLine(),user="",pwd="",profile="",role="",key="";
+
+int l=s.length();
+
+
+// username
+
+int a1=s.indexOf("username");
+
+int a2=s.indexOf("pwd");
+
+int a3=s.indexOf("profile");
+
+int a4=s.indexOf("role");
+
+int a5=s.indexOf("key");
+
+
+
+for(int i=a1+9;i<a2-1;i++)
+
+{
+
+char ch=s.charAt(i);
+
+user=user+ch;
+
+}
+
+
+// password 
+
+
+
+for(int i=a2+4;i<a3-1;i++)
+
+{
+
+char ch=s.charAt(i);
+
+pwd=pwd+ch;
+
+}
+
+
+// profile
+
+
+
+for(int i=a3+8;i<a4-1;i++)
+
+{
+
+char ch=s.charAt(i);
+
+profile=profile+ch;
+
+}
+
+
+
+// role
+
+
+
+for(int i=a4+5;i<a5-1;i++)
+
+{
+
+char ch=s.charAt(i);
+
+role=role+ch;
+
+}
+
+
+// key
+
+
+
+for(int i=a5+4;i<l;i++)
+
+{
+
+char ch=s.charAt(i);
+
+key=key+ch;
+
+}
+
+
+System.out.println("username: "+user);
+
+System.out.println("pwd: "+pwd);
+
+System.out.println("profile: "+profile);
+
+System.out.println("role: "+role);
+
+System.out.println("key: "+key);
+
+
+
+}
+
+}

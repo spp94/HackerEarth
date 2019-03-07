@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Satyam
+
+{
+
+public static void main(String...args)throws Exception
+
+{
+
+Scanner sc=new Scanner(System.in);
+
+int t=sc.nextInt();
+
+for(int i=0;i<t;i++)
+
+{
+Set<Integer> set=new HashSet<Integer>();
+
+int n=sc.nextInt();
+
+for(int j=0;j<n;j++)
+
+{
+
+int m=sc.nextInt();
+
+int ns=sc.nextInt();
+
+set.add(m);
+
+set.add(ns);
+
+}
+
+System.out.println(set.size());
+
+}
+
+}
+
+}
