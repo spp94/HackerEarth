@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+#include<math.h>
+
+int main()
+
+{
+
+long t;
+
+scanf("%d",&t);
+
+while(t--)
+
+{
+
+int n;
+
+scanf("%d",&n);
+
+long long i=pow(2,n);
+
+long c=i-1;
+
+printf("%d\n",c);
+
+}
+
+return 0;
+
+}

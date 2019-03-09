@@ -1,0 +1,97 @@
+import java.io.*;
+
+class The_Monk_and_Class_Marks
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int n=Integer.parseInt(in.readLine());
+
+String s[]=new String[n];
+
+int marks[]=new int[n];
+
+for(int i=1;i<=n;i++)
+
+{
+
+String s1=in.readLine();
+
+String []str=s1.split(" ");
+
+s[i-1]=str[0];
+
+marks[i-1]=Integer.parseInt(str[1]);
+
+}
+
+for(int i=0;i<n-1;i++)
+
+{
+
+for(int j=i+1;j<n;j++)
+
+{
+
+if(marks[i]<marks[j])
+
+{
+
+String t=s[i];
+
+s[i]=s[j];
+
+s[j]=t;
+
+int temp=marks[i];
+
+marks[i]=marks[j];
+
+marks[j]=temp;
+
+}
+
+else if(marks[i]==marks[j])
+
+{
+
+if(s[i].compareTo(s[j])>0)
+
+{
+
+String t=s[i];
+
+s[i]=s[j];
+
+s[j]=t;
+
+int temp=marks[i];
+
+marks[i]=marks[j];
+
+marks[j]=temp;
+
+}
+
+}
+
+}
+
+}
+
+for(int i=0;i<n;i++)
+
+{
+
+System.out.println(s[i]+" "+marks[i]);
+
+}
+
+}
+
+}

@@ -1,0 +1,76 @@
+import java.io.*;
+
+import java.math.*;
+
+import java.util.Arrays;
+
+class Monk_and_the_Magical_Candies
+
+{
+
+public static void main(String...args)throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int T=Integer.parseInt(in.readLine());
+
+for(int i=1;i<=T;i++)
+
+{
+
+String s1=in.readLine();
+
+String []str1=s1.split(" ");
+
+int n=Integer.parseInt(str1[0]);
+
+int time=Integer.parseInt(str1[1]);
+
+String s2=in.readLine();
+
+BigInteger d=new BigInteger("2");
+
+BigInteger sum=new BigInteger("0");
+
+for(int u=1;u<=time;u++)
+
+{
+
+String []str2=s2.split(" ");
+
+Arrays.sort(str2);
+
+int l=str2.length;
+
+
+sum=sum.add(new BigInteger(str2[str2.length-1]));
+
+BigInteger z=new BigInteger(str2[str2.length-1]);
+
+BigInteger g=z.divide(d);
+
+str2[str2.length-1]=""+g;
+
+String str="";
+
+for(int y=0;y<str2.length;y++)
+
+{
+
+str=str+str2[y]+" ";
+
+}
+
+s2=str;
+
+}
+
+System.out.println(sum);
+
+}
+
+}
+
+}

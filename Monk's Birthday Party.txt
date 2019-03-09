@@ -1,0 +1,72 @@
+import java.io.*;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import java.util.LinkedHashSet;
+
+import java.util.Collections;
+
+class monk_birthday
+
+{
+
+public static void main(String args[])
+throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int T=Integer.parseInt(in.readLine());
+
+for(int i=0;i<T;i++)
+
+{
+
+int n=Integer.parseInt(in.readLine());
+
+String a[]=new String[n];
+
+List<String> list = new ArrayList<String>();
+
+for(int j=0;j<n;j++)
+
+{
+
+a[j]=in.readLine();
+
+list.add(a[j]);
+
+}
+
+list = new ArrayList<String>(new LinkedHashSet<String>(list));
+
+Collections.sort(list);
+
+//System.out.println(list.toString());
+
+String str=list.toString();
+
+String []s=str.split(", ");
+
+int len=s.length;
+
+s[0]=s[0].replace('[',' ');
+
+int l=s[0].length();
+
+System.out.println(s[0].substring(1,l));
+
+s[len-1]=s[len-1].replace(']',' ');
+
+for(int k=1;k<len;k++)
+
+System.out.println(s[k]);
+
+}
+
+}
+
+}
