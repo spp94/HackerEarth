@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+int t;
+cin>>t;
+
+while(t--)
+
+{
+long long n;
+cin>>n;
+
+long long ans1 = 0;
+for(long long  i = 1;i<=n;i++)
+ans1 += i*i;
+long long ans2 = 0;
+for(long long j = n;j>=1;j--)
+for(long long  i = 1; i<=n;i++)
+
+ans2 += j*(n-i+1);
+
+cout<<ans1<<endl<<ans2<<endl;
+
+}
+
+}

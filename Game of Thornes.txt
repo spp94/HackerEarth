@@ -1,0 +1,43 @@
+import java.io.BufferedReader;
+
+import java.io.InputStreamReader;
+
+
+class Shubham
+{
+public static void main(String args[] )throws Exception
+{
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+String str = br.readLine();
+long table[] = new long[26];
+long size = str.length(), i = 0;
+
+while(size-- > 0)
+{
+table[str.charAt((int)i) - 'a']++;
+i++;
+}
+long count = 0;
+
+for(int j = 0; j < 26; j++)
+{
+
+if (table[j] % 2 != 0)
+count++;
+}
+
+if(count == 1 || count==0)
+{
+
+System.out.println("YES");
+}
+else
+{
+System.out.println("NO");
+}
+
+}
+
+}

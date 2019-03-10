@@ -1,0 +1,88 @@
+import java.io.*;
+
+import java.lang.Math;
+
+class play_with_string
+
+{
+
+void display(String s)
+
+{
+
+String w="";
+
+int l=s.length(),c=0;
+
+for(int i=0;i<l;i++)
+
+{
+
+char ch=s.charAt(i);
+
+if(ch!=' ')
+
+w=ch+w;
+
+}
+
+for(int i=0;i<l-1;i++)
+
+{
+
+char ch=s.charAt(i);
+
+char ch1=s.charAt(i+1);
+
+char ch2=w.charAt(i);
+
+char ch3=w.charAt(i+1);
+
+int x=(int)ch;
+
+int x1=(int)ch1;
+
+int y=(int)ch2;
+
+int y1=(int)ch3;
+
+if(Math.abs(x1-x)==Math.abs(y1-y))
+
+c++;
+
+}
+
+if(c==(l-1))
+
+System.out.println("Funny");
+
+else
+
+System.out.println("Not Funny");
+
+}
+
+public static void main(String args[])throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int t=Integer.parseInt(in.readLine());
+
+for(int i=0;i<t;i++)
+
+{
+
+String s1=in.readLine();
+
+play_with_string ob=new play_with_string();
+
+ob.display(s1);
+
+}
+
+}
+
+}
+

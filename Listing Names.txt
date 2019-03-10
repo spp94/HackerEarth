@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+int t;
+
+cin>>t;
+string cc;
+map<string,int> mp;
+while(t--)
+{
+
+cin>>cc;
+mp[cc]++;
+}
+for(map<string,int>::iterator ii = mp.begin();ii!= mp.end();ii++)
+{
+
+cout<<(*ii).first<<" "<<(*ii).second<<endl;
+
+}
+
+}
