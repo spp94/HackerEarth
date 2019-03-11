@@ -1,0 +1,180 @@
+
+import java.util.Scanner;
+
+import java.io.FileInputStream;
+
+import java.io.InputStreamReader;
+
+import java.io.BufferedReader;
+
+import java.util.Scanner;
+
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
+
+import java.lang.*;
+
+import java.net.*;
+
+
+public class CarName
+{
+public static void main (String args[]) throws IOException, FileNotFoundException 
+{
+
+BufferedReader br = null;
+
+try
+{
+br = new BufferedReader(new InputStreamReader(System.in));
+
+Integer noOfNames = 0;
+Integer i = 0;
+String input;
+while((input = br.readLine())!=null)
+{
+
+String line = input;
+
+if(i == 0)
+{
+
+noOfNames = Integer.parseInt(line);
+
+}
+else
+{
+
+if( (new CarName().satisfyCondition1(line)) && (new CarName().satisfyCondition2(line)) )
+{
+
+System.out.println("OK");
+}
+
+else
+{
+System.out.println("Not OK");
+
+}
+
+}
+
+i++;
+
+}
+
+}
+
+catch(FileNotFoundException ex)
+{
+
+System.out.println(ex.getMessage());
+}
+
+
+}
+public boolean satisfyCondition1(String line)
+{
+if(getNoDupString(line).length() == 3)
+{
+
+return true;
+}
+
+return false;
+
+}
+
+
+public static StringBuilder getNoDupString(String line)
+{
+
+StringBuilder removeDupes = new StringBuilder();
+for( int i =0 ; i< line.length(); i++)
+{
+String eachChar = line.substring(i,i+1);
+
+if(removeDupes.indexOf(eachChar) == -1)
+{
+
+removeDupes.append(eachChar);
+
+}
+
+}
+
+return removeDupes;
+}
+
+
+
+public boolean satisfyCondition2(String line)
+{
+boolean condition2 = true;
+
+Integer n =0;
+
+n = getNForString(line);
+
+
+StringBuilder removeDupes = getNoDupString(line);
+
+for(int i = 0 ; i < removeDupes.length(); i++)
+{
+
+Integer countOfChar = 0;
+for(int j = 0 ; j< line.length(); j++)
+{
+
+if(removeDupes.charAt(i) == line.charAt(j))
+{
+
+countOfChar++;
+
+}
+
+}
+
+if( countOfChar != n )
+{
+
+return false;
+
+}
+
+}
+
+
+return true;
+}
+
+
+public static Integer getNForString(String line)
+{
+
+Integer n = 0;
+for(int k = 0 ; k< line.length(); k++)
+{
+
+if(k==0)
+{
+for(int l = 0 ;  l< line.length(); l++)
+{
+if(line.charAt(k) == line.charAt(l))
+{
+
+n++;
+
+}
+}
+
+}
+}
+
+return n;
+
+}
+
+
+}

@@ -1,0 +1,28 @@
+import java.io.*;
+
+import java.math.BigInteger;
+class Avengers
+{
+ 
+public static void main(String...args)throws IOException
+
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+
+for(int i=1;i<=T;i++)
+{
+
+String s=in.readLine();
+
+BigInteger n=new BigInteger(s);
+BigInteger y1=new BigInteger("2");
+
+BigInteger y2=(n.multiply(n.subtract(BigInteger.ONE))).divide(y1);
+
+System.out.println(y2);
+}
+
+}
+
+}

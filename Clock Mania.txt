@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+int t;
+cin>>t;
+
+while(t--)
+{
+
+int hour,minn;
+
+cin>>hour>>minn;
+
+hour = hour%12;
+int angle1 = minn*6;
+
+int angle2 = hour*30  + minn/2;
+int ans1 = angle1 - angle2;
+if(ans1 < 0)
+
+ans1+=360;
+
+int ans2 = angle2 - angle1;
+
+if(ans2<0)
+ans2+=360;
+
+cout<<min(ans2,ans1)<<endl;
+
+}
+
+}

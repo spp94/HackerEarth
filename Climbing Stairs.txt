@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+unsigned long long arr[1010];
+
+unsigned long long compute(int x)
+
+{
+
+if(arr[x]!=0)
+
+return arr[x];
+
+if(x==0)
+
+return 1;
+
+unsigned long long ans = 0;
+
+if(x >=1)
+
+ans += compute(x-1);
+
+if(x>=2)
+
+ans+= compute(x-2);
+
+arr[x] = ans;
+
+assert(arr[x]>=0);
+
+return ans;
+
+}
+
+int main()
+{
+
+compute(1000);
+int t;
+cin>>t;
+while(t--)
+{
+int a;
+cin>>a;
+cout<<arr[a]<<endl;
+}
+
+}
