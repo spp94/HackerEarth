@@ -1,0 +1,81 @@
+import java.io.*;
+
+class monkiness
+
+{
+
+public static void main(String args[])throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int T=Integer.parseInt(in.readLine());
+
+for(int i=0;i<T;i++)
+
+{
+
+int s=Integer.parseInt(in.readLine());
+
+int a[]=new int[s];
+
+int b[]=new int[s];
+
+String str=in.readLine();
+
+String []parts=str.split(" ");
+
+String str1=in.readLine();
+
+String []parts1=str1.split(" ");
+
+for(int m=0;m<s;m++)
+
+{
+
+a[m]=Integer.parseInt(parts[m]);
+
+}
+
+for(int m=0;m<s;m++)
+
+{
+
+b[m]=Integer.parseInt(parts1[m]);
+
+}
+
+int c=0,max=0;
+
+for(int k=0;k<s;k++)
+
+{
+
+for(int j=0;j<s;j++)
+
+{
+
+if(b[j]>=a[k] && j>=k)
+
+c=j-k;
+
+if(c>max)
+
+max=c;
+
+}
+
+}
+
+System.out.println(max);
+
+if(c>0)
+
+System.out.println("0");
+
+}
+
+}
+
+}

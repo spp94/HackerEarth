@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+
+import java.io.InputStreamReader;
+
+class TestClass
+{
+public static void main(String args[])throws Exception
+{
+BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+String tc = in.readLine();
+
+String s="";
+
+while((s=in.readLine())!=null)
+{
+
+String str[]=s.split(" ");
+
+int a = Integer.parseInt(str[0]);
+int b = Integer.parseInt(str[1]);
+
+int c = Integer.parseInt(str[2]);
+int k = Integer.parseInt(str[3]);
+long lb =0;
+long ub =100000;
+long res =0;
+while(lb<=ub)
+
+{
+
+long mid = (lb+ub)/2;
+long val = a*(mid*mid) + b*mid + c;
+
+if(val >= k)
+{
+res = mid;
+ub = mid-1;
+
+}
+
+else
+lb = mid+1;
+}
+
+System.out.println(res);
+
+}
+
+}
+
+}
