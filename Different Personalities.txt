@@ -23,9 +23,10 @@ for(int i =0 ; i < n ;i++)
 {
 
 cin>>a;
-ss.insert(a);
-}
 
+ss.insert(a);
+
+}
 cout<<ss.size()<<endl;
 
 }
