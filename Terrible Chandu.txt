@@ -1,0 +1,55 @@
+import java.io.*;
+
+class terriblechandu
+
+{
+
+void display(String s)
+
+{
+
+int l=s.length();
+
+String w="";
+
+for(int i=0;i<l;i++)
+
+{
+char ch=s.charAt(i);
+
+if(ch!=' ')
+
+{
+
+w=ch+w;
+
+}
+
+}
+
+System.out.println(w);
+
+}
+
+public static void main(String args[])throws IOException
+
+{
+
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+
+int t=Integer.parseInt(in.readLine());
+
+for(int i=0;i<t;i++)
+
+{
+
+String s1=in.readLine();
+
+terriblechandu ob=new terriblechandu();
+
+ob.display(s1);
+}
+
+}
+
+}
