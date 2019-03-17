@@ -1,0 +1,40 @@
+/* IMPORTANT: class must not be public. */
+ 
+ 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+ 
+ 
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       BufferedReader reader = new BufferedReader(new InputStreamReader(
+				System.in));
+		int totalTestCase = Integer.parseInt(reader.readLine());
+		StringBuilder sb = new StringBuilder();
+ 
+		while (totalTestCase != 0) {
+			totalTestCase--;
+			String[] input = reader.readLine().split(" ");
+			int R = Integer.parseInt(input[0].trim());
+			int K = Integer.parseInt(input[1].trim());
+			int answer = 0;
+			for (int i = 1; i <= R; i++) {
+				if (isCool(i, K))answer++;
+			}
+			sb.append(answer);
+			sb.append("\n");
+		}
+		System.out.println(sb);
+	}
+ 
+	private static boolean isCool(int R, int K) {
+		int count = 0;
+		while (R > 0) {
+			if ((R & 5) == 5 && (R & 2) == 0) {
+				count += 1;
+			}
+			R >>= 1;
+		}
+		return count >= K;
+	}
+}

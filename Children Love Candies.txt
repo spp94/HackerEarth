@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+#define ll long long int
+int main()
+{
+ll t;
+cin>>t;
+while(t--)
+{
+ll a,b;
+cin>>a>>b;
+while(b--)
+{
+if(a%2==0)
+a=a-(a/2);
+else
+a=a-((a+1)/2);
+a=a-(a/4);
+}
+cout<<a<<endl;
+}
+return 0;
+}

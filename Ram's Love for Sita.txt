@@ -1,0 +1,30 @@
+import java.io.*;
+class Rams_Love_Sita
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+int n=Integer.parseInt(str[0]);
+int c=Integer.parseInt(str[1]);
+int m=Integer.parseInt(str[2]);
+if(c==0)
+System.out.println("Infinite");
+else
+{
+int x=n/c;
+int y=x,d=0;
+while(x>=m && m!=0)
+{
+x=x-m+1;
+d++;
+}
+System.out.println((y+d));
+}
+}
+}
+}
