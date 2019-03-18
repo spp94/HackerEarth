@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+#define ll long long int
+ll demo(ll n)
+{
+	ll n1=0;
+do
+{
+		ll r=n%10;
+		n1=n1*10+r;
+		n=n/10;
+	}while(n!=0);
+	return n1;
+}
+ll digits(ll n)
+{
+	ll c=0;
+	do
+	{
+		c++;
+		n=n/10;
+	}while(n!=0);
+	return c;
+}
+void display(ll n)
+{
+	ll r=demo(n);
+	if(r==n)
+	cout<<"No"<<endl;
+	else
+	{
+		ll a=n*n;
+		ll b=r*r;
+		ll g=digits(a);
+		ll h=digits(b);
+		ll p1=demo(a);
+		if(p1==b && g==h)
+		cout<<r<<endl;
+		else
+		cout<<"No"<<endl;
+	}
+}
+int main()
+{
+	ll t;
+	cin>>t;
+	while(t--)
+	{
+		ll n;
+		cin>>n;
+		display(n);
+	}
+	return 0;
+}
