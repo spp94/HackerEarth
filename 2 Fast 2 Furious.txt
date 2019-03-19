@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<math.h>
+ 
+       int main()
+	{
+		
+		int T;
+                scanf("%d\n",&T);
+		int a[T],b[T],i,j,n,m,max=0,max1=0;
+		for( i=0;i<T;i++)
+		{
+	
+			scanf("%d ",&a[i]);
+		}
+			for( i=0;i<T;i++)
+		{
+	
+			scanf("%d ",&b[i]);
+		}
+		
+		for(j=0;j<T-1;j++)
+		{
+			 n=abs(a[j+1]-a[j]);
+			 m=abs(b[j+1]-b[j]);
+			if(n>max)
+			{
+				max=n;
+			}
+			if(m>max1)
+			{
+			max1=m;
+		    }
+		}
+		    if(max>max1)
+		    {
+		       printf("Dom\n");
+		       printf("%d\n",max);
+		    }
+		    else if(max1>max)
+		    {
+		    	printf("Brian\n");
+		    	printf("%d\n",max1);
+		    }
+		    else if(max==max1)
+		    {
+		    	printf("tie\n");
+		    }
+		
+		
+			
+		}

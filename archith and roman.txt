@@ -1,0 +1,27 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Archith_And_Roman
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int i=1;i<=t;i++)
+{
+int n=Integer.parseInt(in.readLine());
+String a[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC","C"};
+String b[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+if(n%10==0)
+System.out.println(a[n/10]);
+else if(n>0 && n<10)
+System.out.println(b[n]);
+else if(n>9)
+{
+int r=n%10;
+n=n/10;
+System.out.println(a[n]+""+b[r]);
+}
+}
+}
+}

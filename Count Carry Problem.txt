@@ -1,0 +1,36 @@
+import java.io.*;
+import java.math.BigInteger;
+class Count_Carry_Problem
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+BigInteger n1=new BigInteger(str[0]);
+BigInteger n2=new BigInteger(str[1]);
+BigInteger r1=new BigInteger("0");
+BigInteger r2=new BigInteger("0");
+BigInteger r3=new BigInteger("10");
+int c=0;
+do
+{
+r1=n1.mod(r3);
+r2=n2.mod(r3);
+if(r3.subtract(r1.add(r2)).compareTo(BigInteger.ZERO)<=0)
+c++;
+n1=n1.divide(r3);
+n2=n2.divide(r3);
+}while(n1.compareTo(BigInteger.ZERO)!=0 && n1.compareTo(BigInteger.ZERO)!=0);
+if(c>1)
+System.out.println(c+" carry operations");
+else if(c==1)
+System.out.println(c+" carry operation");
+else
+System.out.println("No carry operation");
+}
+}
+}
