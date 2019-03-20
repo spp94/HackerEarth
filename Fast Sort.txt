@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+class U
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s1=in.readLine();
+String s2=in.readLine();
+for(int j=0;j<s1.length();j++)
+{
+for(int k=0;k<s2.length();k++)
+{
+if(s1.charAt(j)==s2.charAt(k))
+{
+System.out.print(s1.charAt(j));
+}
+}
+}
+System.out.println();
+}
+}
+}

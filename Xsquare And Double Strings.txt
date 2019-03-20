@@ -1,0 +1,34 @@
+import java.io.*;
+class R
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String str=in.readLine();
+int len=str.length(),d=0;
+for(int j=97;j<=122;j++)
+{
+int c=0;
+for(int k=0;k<len;k++)
+{
+char ch1=str.charAt(k);
+int y=ch1;
+if(j==ch1)
+c++;
+}
+if(c>1)
+{
+d++;
+break;
+}
+}
+if(d==1)
+System.out.println("Yes");
+else
+System.out.println("No");
+}
+}
+}

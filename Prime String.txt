@@ -1,0 +1,73 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class W
+{
+static long prime(long n)
+{
+long c=1;
+for(long i=2;i<=n;i++)
+{
+if(n%i==0)
+c++;
+}
+if(c==2)
+return 1;
+else
+return 0;
+}
+ 
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+long a[]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+String s=in.readLine();
+long u=-1,d=0;
+for(int j=97;j<=122;j++)
+{
+long c1=0;
+for(int k=0;k<s.length();k++)
+{
+char ch=s.charAt(k);
+int y=ch;
+if(y==j)
+c1++;
+}
+if(c1!=0)
+{
+d++;
+a[j-97]=c1;
+long m=prime(c1);
+if(m==1)
+{
+u=1;
+continue;
+}
+else
+{
+u=0;
+break;
+}
+}
+}
+ 
+long r=0;
+for(int j=0;j<26;j++)
+{
+if(a[j]!=-1 && a[j]!=0)
+{
+r++;
+}
+}
+ 
+long p=prime(r);
+if(p==1 && u==1)
+System.out.println("YES");
+else
+System.out.println("NO");
+}
+}
+}
