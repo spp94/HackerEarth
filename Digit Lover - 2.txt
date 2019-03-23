@@ -1,0 +1,63 @@
+import java.io.*;
+import java.math.*;
+class Digit_Lover2
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine(),small="",big="";
+String []str=s.split(" ");
+String s1=str[0],s2=str[1];
+int l1=s1.length(),l2=s2.length(),l=0;
+if(l1<l2)
+{
+l=l1;
+small=s1;
+big=s2;
+}
+else if(l2<l1)
+{
+l=l2;
+small=s2;
+big=s1;
+}
+ 
+if(l1!=l2)
+{
+long num1=Long.parseLong(small);
+String h1=big.substring(0,l),h2=big.substring(l);
+long num2=Long.parseLong(h1);
+String w="";
+do
+{
+long r1=num1%10;
+long r2=num2%10;
+long sum=r1+r2;
+w=sum+w;
+num2=num2/10;
+num1=num1/10;
+}while(num2!=0);
+System.out.println(w+""+h2);
+}
+else if(l1==l2)
+{
+String w="";
+long u=Long.parseLong(s1);
+long v=Long.parseLong(s2);
+do
+{
+long r1=u%10;
+long r2=v%10;
+long sum=r1+r2;
+w=sum+w;
+u=u/10;
+v=v/10;
+}while(u!=0);
+System.out.println(w);
+}
+}
+}
+}

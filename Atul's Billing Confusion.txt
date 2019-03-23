@@ -1,0 +1,27 @@
+import java.io.*;
+class Atul_billing_confusion
+{
+void display(int p,int q,int t)
+{
+int m=p*q;
+if(m==t)
+System.out.println("YES");
+else
+System.out.println("NO");
+}
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=0;i<T;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+int P=Integer.parseInt(str[0]);
+int Q=Integer.parseInt(str[1]);
+int M=Integer.parseInt(str[2]);
+Atul_billing_confusion ob=new Atul_billing_confusion();
+ob.display(P,Q,M);
+}
+}
+}

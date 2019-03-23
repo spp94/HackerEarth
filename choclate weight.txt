@@ -1,0 +1,46 @@
+import java.util.*;
+class mahi
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		StringBuffer sb = new StringBuffer();
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		String l = "I Like You\n";
+		String h = "I Hate You\n";
+		for(int i=0;i<n;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		int t = sc.nextInt();
+		while(t-->0)
+		{
+			int m = sc.nextInt();
+			boolean mahi = false;
+		mahi:for(int i=0;i<n-1;i++)
+			{
+				if(arr[i]==m)
+				{
+					sb.append(l);
+					mahi = true;
+					break;
+				}else
+				{
+					for(int j=i+1;j<n;j++)
+					{
+						if(arr[i]+arr[j] == m)
+						{
+							sb.append(l);
+							mahi = true;
+							break mahi;
+						}
+					}
+				}
+				
+			}
+			if(!mahi)sb.append(h);
+		}
+		System.out.println(sb);
+	}
+}

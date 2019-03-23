@@ -1,0 +1,20 @@
+#include <iostream>
+#define ll long long int
+using namespace std;
+ 
+int main()
+{
+    ll t;
+  cin>>t;
+    while(t--)
+    {
+    	ll a,b,i,s=0;
+    	cin>>a>>b;
+        ll c=(a/b);
+        ll d=(a%b);
+        ll x=((b-1)*b*c)/2;
+        ll y=(d*(d+1)/2);
+        s+=x+y;
+        cout<<s<<endl;
+    }
+}

@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class E
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+char ch[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+int arr[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+String str=in.readLine();
+int len=str.length();
+for(int j=0;j<26;j++)
+{
+int c=0;
+for(int k=0;k<len;k++)
+{
+char ch1=str.charAt(k);
+if(ch[j]==ch1)
+c++;
+}
+arr[j]=c;
+}
+int count=0;
+for(int k=0;k<26;k++)
+{
+if(arr[k]%2==1 && arr[k]!=0)
+count++;
+//System.out.print(arr[k]+" ");
+}
+if(count==0)
+System.out.println(count);
+else
+System.out.println(count-1);
+}
+}
+}

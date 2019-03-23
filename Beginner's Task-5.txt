@@ -1,0 +1,28 @@
+import java.io.*;
+class Ab
+{
+public static void main(String...args)throws IOException
+{
+	BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long a=Long.parseLong(in.readLine()),b=Long.parseLong(in.readLine()),c=Long.parseLong(in.readLine());
+if(a==1 && b==1 && c==1)
+System.out.println("3");
+else if(a==1 && c==1)
+System.out.println(a+b+c);
+else
+{
+long r1=(a*b*c);
+long r2=(a+b)*c;
+long r3=a*(b+c);
+long r4=(a*b)+c;
+if(r1>r2 && r1>r3 && r1>r4)
+System.out.println(r1);
+if(r2>r1 && r2>r3 && r2>r4)
+System.out.println(r2);
+if(r3>r2 && r3>r1 && r3>r4)
+System.out.println(r3);
+if(r4>r1 && r4>r2 && r4>r3)
+System.out.println(r4);
+}
+}
+}

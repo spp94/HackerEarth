@@ -1,0 +1,35 @@
+import java.io.*;
+class f
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int d=0;d<t;d++)
+{
+String s1=in.readLine();
+int l=s1.length();
+//System.out.println(l);
+int s=0,f=-1,num=l;
+for(int i=0;i<l;i++)
+{
+for(int j=0;j<l;j++)
+{
+if(s1.charAt(i)==s1.charAt(j))
+s++;
+}
+//System.out.println(s1.charAt(i)+" "+s);
+for(int k=0;k<i;k++)
+{
+if(s1.charAt(i)==s1.charAt(k))
+f = 1;
+}
+if(f==-1)
+num=num-s+1;
+s=0;
+f=-1;
+}
+System.out.println(num);
+}
+}
+}
