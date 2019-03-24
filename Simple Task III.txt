@@ -1,0 +1,37 @@
+import java.io.*;
+import java.math.*;
+class Y
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long a[]=new long[3];
+a[0]=Long.parseLong(str[0]);
+a[1]=Long.parseLong(str[1]);
+a[2]=Long.parseLong(str[2]);
+for(int j=0;j<3;j++)
+{
+for(int k=j+1;k<3;k++)
+{
+if(a[j]<a[k])
+{
+long p=a[j];
+a[j]=a[k];
+a[k]=p;
+}
+}
+}
+if(a[0]==0 && a[1]==0 && a[2]==0)
+System.out.println("0");
+else if(a[0]==a[1])
+System.out.println(2*a[0]);
+else
+System.out.println((2*a[1])+1);
+}
+}
+}

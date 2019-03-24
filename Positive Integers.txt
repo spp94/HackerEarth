@@ -1,0 +1,32 @@
+import java.io.*;
+class Abc
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long j=1;j<=t;j++)
+{
+String s1=in.readLine();
+int c=0;
+String s=in.readLine();
+String w="";
+for(int i=0;i<s.length();i++)
+{
+char ch=s.charAt(i);
+if(ch!=' ')
+{
+w=w+ch;
+}
+else
+{
+String n=w;
+if(n.charAt(0)!='-')
+c++; 
+w="";
+}
+}
+System.out.println(c);
+}
+}
+}

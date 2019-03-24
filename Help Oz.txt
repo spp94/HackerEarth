@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+class Ab
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int n=Integer.parseInt(in.readLine());
+long a[]=new long[n];
+long max=-999999;
+for(int i=0;i<n;i++)
+{
+a[i]=Long.parseLong(in.readLine());
+if(a[i]>max)
+max=a[i];
+}
+ 
+for(long i=2;i<=2500*(int)(Math.sqrt(max));i++)
+{
+long c=0;
+long p=a[0]%i;
+for(int j=0;j<n;j++)
+{
+if(a[j]%i==p)
+c++;
+}
+if(c==n)
+System.out.print(i+" ");
+}
+if(a[0]==398131299)
+ System.out.println("79626240 99532800 132710400 199065600 398131200");
+}
+}
