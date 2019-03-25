@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.lang.Math;
+ 
+ 
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+ 
+ 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        for (int i = 0; i < T; i++) {
+ 			int n = Integer.parseInt(br.readLine());
+ 			if(n==1) {
+ 				System.out.println(0+" "+1);
+ 			}
+ 			else if(n==2) {
+ 				System.out.println(1+" "+1);
+ 			}
+ 			else {
+ 				System.out.println(calculate(n)+" "+calculate(n+1));
+ 			}
+ 				
+        }
+ 
+    }
+    public static long calculate(int n) {
+    	long a=0,b=1,c=0;
+    	for(int i=2;i<n;i++) {
+    		c=a+b;
+    		a=b;
+    		b=c;
+    	}
+    	return c;
+    }
+}

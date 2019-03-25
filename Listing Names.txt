@@ -1,26 +1,34 @@
-#include<bits/stdc++.h>
-
-using namespace std;
-
-int main()
-
+import java.io.*;
+import java.util.*;
+class listing_names
 {
-int t;
-
-cin>>t;
-string cc;
-map<string,int> mp;
-while(t--)
+public static void main(String args[])throws IOException
 {
-
-cin>>cc;
-mp[cc]++;
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int n=Integer.parseInt(in.readLine());
+String a[]=new String[n];
+for(int i=0;i<n;i++)
+{
+a[i]=in.readLine();
 }
-for(map<string,int>::iterator ii = mp.begin();ii!= mp.end();ii++)
+Arrays.sort(a);
+for(int i=0;i<n;i++)
 {
-
-cout<<(*ii).first<<" "<<(*ii).second<<endl;
-
+int c=0;
+for(int j=i+1;j<n;j++)
+{
+if(a[i].equals(a[j]))
+c++;
 }
-
+int f=-1;
+for(int k=0;k<i;k++)
+{
+if(a[i].equals(a[k]))
+f=1;
+}
+if(f==-1)
+System.out.println(a[i]+" "+(c+1));
+f=-1;
+}
+}
 }

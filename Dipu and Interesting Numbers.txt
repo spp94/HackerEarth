@@ -1,0 +1,24 @@
+import java.io.*;
+import java.math.*;
+class P
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long a=Long.parseLong(str[0]);
+long b=Long.parseLong(str[1]);
+double y=Math.sqrt(a);
+long x=(long)y;
+if(y>x)
+x=x+1;
+double m=Math.sqrt(b);
+long n=(long)m;
+System.out.println(n-x+1);
+}
+}
+}
