@@ -1,0 +1,42 @@
+import java.io.*;
+class Av
+{
+static int hcf(int a,int b)
+{
+if(b%a==0)
+return a;
+else
+return(hcf(b%a,a));
+}
+static int prime(int n)
+{
+int c=0;
+for(int i=1;i<=n;i++)
+{
+if(n%i==0)
+c++;
+}
+if(c==2)
+return 1;
+else
+return 0;
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int u=0;u<t;u++)
+{
+int n=Integer.parseInt(in.readLine()),c=0;
+for(int i=1;i<=n;i++)
+{
+if(hcf(i,n)==1)
+c++;
+}
+if(prime(c)==1)
+System.out.println("TRUE");
+else
+System.out.println("FALSE");
+}
+}
+}

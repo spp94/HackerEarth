@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+class A
+{
+	public static void main(String...args)throws IOException
+	{
+		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+		long t=Long.parseLong(in.readLine());
+		while(t-->0)
+		{
+			long n=Long.parseLong(in.readLine());
+			long s=0;
+			for(long i=1;i<n;i++)
+			{
+				s+=i*(i+1)/2;
+			}
+			System.out.println(2*s);
+		}
+	}
+}

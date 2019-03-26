@@ -1,0 +1,32 @@
+import java.io.*;
+class A
+{
+static long demo(long n)
+{
+long sum=0;
+do
+{
+sum=0;
+do
+{
+long r=n%10;
+sum=sum+r;
+n=n/10;
+}while(n!=0);
+n=sum;
+}while(sum>9);
+return sum;
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long n;
+long t=Long.parseLong(in.readLine());
+while(t-->0)
+{
+n=Long.parseLong(in.readLine());
+long p=demo(n);
+System.out.println(p);
+}
+}
+}
