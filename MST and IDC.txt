@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+class R
+{
+public static void main(String...args)throws IOException
+{
+	BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+	long t=Long.parseLong(in.readLine());
+	for(long i=1;i<=t;i++)
+	{
+		int n=Integer.parseInt(in.readLine());
+		long a[]=new long[n];
+		String s=in.readLine();
+		String []str=s.split(" ");
+		long min=99999999,max=-99999999;
+		for(int j=0;j<str.length;j++)
+		{
+			a[j]=Long.parseLong(str[j]);
+		/*	if(a[j]<min)
+			min=a[j];
+			else if(a[j]>max)
+			max=a[j];*/
+		}
+		Arrays.sort(a);
+		long d=(a[n-1]-a[0])*2;
+		System.out.println(d);
+		
+	}
+	}
+}

@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+while(t--)
+{
+int a,b,c,j,k;
+cin>>a>>b>>c;
+long long int arr[50];
+for(j=0;j<a;j++)
+{
+arr[j]=b;
+}
+for(j=a;j<c;j++)
+{
+long sum=0;
+for(k=j-a;k<j;k++)
+{
+sum=sum+arr[k];
+}
+arr[j]=sum;
+}
+cout<<(arr[c-1])<<endl;
+}
+}

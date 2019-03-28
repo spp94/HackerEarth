@@ -1,0 +1,41 @@
+import java.io.*;
+import java.math.BigInteger;
+class S
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+int n=Integer.parseInt(in.readLine());
+String s[]=new String[n];
+for(int j=0;j<n;j++)
+{
+s[j]=in.readLine();
+}
+int d=0;
+for(int j=0;j<n;j++)
+{
+int c=0;
+for(int k=0;k<n;k++)
+{
+if((s[j].length() < s[k].length()) && s[k].contains(s[j])==true && s[j].equals(s[k])!=true)
+{
+c++;
+break;
+}
+}
+if(c>0)
+{
+d++;
+break;
+}
+}
+if(d>0)
+System.out.println("NO");
+else
+System.out.println("YES");
+}
+}
+}

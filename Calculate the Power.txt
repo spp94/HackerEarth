@@ -1,0 +1,14 @@
+import java.util.*;
+import java.math.*;
+class Calculate_The_Power
+{
+public static void main(String...args)throws Exception
+{
+Scanner sc=new Scanner(System.in);
+int a=sc.nextInt();
+int b=sc.nextInt();
+double c=Math.pow(a,b);
+int c1=(int)c;
+System.out.println(c1%1000000007);
+}
+}

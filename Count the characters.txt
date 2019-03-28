@@ -1,0 +1,27 @@
+import java.io.*;
+class count_the_characters
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int n=Integer.parseInt(in.readLine());
+String a[]=new String [n];
+for(int i=0;i<n;i++)
+{
+a[i]=in.readLine();;
+}
+int d=0;
+for(char i='a';i<='z';i++)
+{
+int c=0;
+for(int j=0;j<n;j++)
+{
+if(a[j].contains(i+""))
+c++;
+}
+if(c==n)
+d++;
+}
+System.out.println(d);
+}
+}
