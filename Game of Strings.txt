@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+class A 
+{
+	public static void main(String[] args) throws Exception
+	{
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String str[] = in.readLine().split(" ");
+		str[0] = str[0].replaceAll("[aeiou]","");
+		str[1] = str[1].replaceAll("[aeiou]","");
+		char arr1[] = str[0].toCharArray();
+		char arr2[] = str[1].toCharArray();
+		int l1 = str[0].length();
+		int l2 = str[1].length();
+		int lcs[][] = new int[l1+1][l2+1];
+		for(int i=0;i<l1+1;i++)
+			lcs[i][0]=0;
+		for(int i=0;i<l2+1;i++)
+			lcs[0][i]=0;
+		for(int i=1;i<l1+1;i++)
+		{
+			for(int j=1;j<l2+1;j++)
+			{
+				if(arr1[i-1]==arr2[j-1])
+					lcs[i][j]=1+lcs[i-1][j-1];
+				else
+					lcs[i][j]=Math.max(lcs[i-1][j],lcs[i][j-1]);
+			}
+		}
+		System.out.println(lcs[l1][l2]);
+	}
+}

@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+class Little_Ashish_nd_His_Wife
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s1=in.readLine();
+String []str1=s1.split(" ");
+int a=Integer.parseInt(str1[0]);
+int b=Integer.parseInt(str1[1]);
+String s=in.readLine();
+String []str2=s.split(" ");
+int arr[]=new int[a];
+for(int j=0;j<a;j++)
+arr[j]=Integer.parseInt(str2[j]);
+ 
+/*for(int j=0;j<a;j++)
+System.out.print(arr[j]+" ");*/
+//Arrays.sort(arr);
+/*for(int j=0;j<a;j++)
+System.out.print(arr[j]+" ");*/
+/*int len=arr.length;
+int l=arr[len-1]-arr[0];*/
+ 
+for(int j=0;j<a;j++)
+{
+for(int k=j+1;k<a;k++)
+{
+if(arr[j]==arr[k])
+{
+for(int u=k;u<a-1;u++)
+{
+arr[u]=arr[u+1];
+}
+a--;
+}
+}
+}
+ 
+if(a==b )
+System.out.println("Perfect husband");
+else if(a>b )
+System.out.println("Lame husband");
+else if(a<b )
+System.out.println("Bad husband");
+}
+}
+}

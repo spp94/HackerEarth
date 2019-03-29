@@ -1,0 +1,62 @@
+import java.io.*;
+class Oz
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+String s=in.readLine();
+String s1=s;
+if(s.charAt(0)=='O')
+{
+int a=s.indexOf("ZO"),count=0;
+if(a==-1)
+{
+System.out.println("0");
+}
+else
+{
+int c=0;
+while(c!=-1)
+{
+c=s.indexOf("ZO");
+s=s.substring(0,c)+"OZ"+s.substring(c+2);
+//System.out.println(s);
+//System.out.println(count);
+count++;
+c=s.indexOf("ZO");
+}
+}
+if(count>0)
+System.out.println(count);
+//System.out.println();
+}
+else if(s1.charAt(0)=='Z')
+{
+int a1=s1.indexOf("OZ"),count1=0;
+if(a1==-1)
+{
+System.out.println("0");
+}
+else
+{
+int c1=0;
+while(c1!=-1)
+{
+c1=s1.indexOf("OZ");
+s1=s1.substring(0,c1)+"ZO"+s1.substring(c1+2);
+//System.out.println(s);
+//System.out.println(count);
+count1++;
+c1=s1.indexOf("OZ");
+}
+}
+if(count1>0)
+System.out.println(count1);
+//System.out.println();
+}
+}
+}
+}

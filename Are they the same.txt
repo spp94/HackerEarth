@@ -1,0 +1,15 @@
+import java.util.*;
+class W
+{
+public static void main(String...args)throws Exception
+{
+Scanner s=new Scanner(System.in);
+String x=s.next();
+String y=s.next();
+char[] c=x.toCharArray();
+char[] g=y.toCharArray();
+Arrays.sort(c);
+Arrays.sort(g);
+System.out.print(Arrays.equals(c,g)?"YES":"NO");
+}
+}

@@ -1,0 +1,41 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Ac
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+long n=Long.parseLong(in.readLine()),c=0;
+if(n<9)
+{
+if(n==2||n==3||n==5||n==7)
+c=1;
+else if(n==1)
+c=-1;
+else if(n==4 || n==6 || n==8)
+c=2;
+}
+else
+{
+long a=n%7;
+long b=n/7;
+if(a==0)
+c=b;
+else if(a!=0)
+{
+if(n%7==2 || n%7==3 || n%7==5 || n%7==1)
+c=b+1;
+else if(n%7==4 || n%7==6)
+c=b+2;
+else
+c=-1;
+}
+}
+System.out.println(c);
+}
+}
+}

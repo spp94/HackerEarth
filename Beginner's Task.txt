@@ -1,0 +1,26 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Beginners_Task
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(int i=1;i<=t;i++)
+{
+long n=Long.parseLong(in.readLine());
+String s=in.readLine();
+String []str=s.split(" ");
+long c=0;
+for(int j=0;j<str.length;j++)
+{
+BigInteger num=new BigInteger(str[j]);
+if(num.mod(new BigInteger("2")).compareTo(new BigInteger("0"))==0)
+c++;
+}
+System.out.println(c);
+}
+ 
+}
+}
