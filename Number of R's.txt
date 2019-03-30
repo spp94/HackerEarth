@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+class F
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+int a=s.indexOf('K');
+int b=s.lastIndexOf('K');
+if(a==b)
+System.out.println(s.length());
+else
+{
+String w=s.substring(0,a);
+for(int j=a;j<=b;j++)
+{
+if(s.charAt(j)=='R')
+w=w+'K';
+else
+w=w+'R';
+}
+w=w+s.substring(b+1);
+s=w;
+}
+long c=0;
+for(int j=0;j<s.length();j++)
+{
+if(s.charAt(j)=='R')
+c++;
+}
+System.out.println(c);
+}
+}
+}

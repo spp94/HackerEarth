@@ -1,0 +1,42 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class T
+{
+static long demo(long n1,long n2)
+{
+long a=0;
+long b=1;
+long count=0;
+for(long i=3;i<=i+1;i++)
+{
+long c=a+b;
+if(c>=n1 && c<=n2)
+count++;
+else if(c>n2)
+break;
+a=b;
+b=c;
+}
+return count;
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long a=Long.parseLong(str[0]);
+long b=Long.parseLong(str[1]);
+long p=demo(a,b);
+if(a==1)
+p++;
+if(p%2==0)
+System.out.println("VALID");
+else
+System.out.println("INVALID");
+}
+}
+}

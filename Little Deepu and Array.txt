@@ -1,0 +1,34 @@
+import java.io.*;
+class Deepuarray
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int n=Integer.parseInt(in.readLine());
+int a[]=new int[n];
+String s=in.readLine();
+String []str=s.split(" ");
+for(int i=0;i<n;i++)
+{
+a[i]=Integer.parseInt(str[i]);
+}
+int m=Integer.parseInt(in.readLine());
+int b[]=new int[m];
+for(int i=0;i<m;i++)
+{
+b[i]=Integer.parseInt(in.readLine());
+}
+for(int i=0;i<m;i++)
+{
+for(int j=0;j<n;j++)
+{
+if(b[i]<a[j])
+a[j]=a[j]-1;
+}
+}
+for(int i=0;i<n;i++)
+{
+System.out.print(a[i]+" ");
+}
+}
+}

@@ -1,0 +1,17 @@
+ #include <iostream>
+    using namespace std;
+    #include<math.h>
+     #define ll long long int
+    int main()
+    {
+        int t;
+        cin>>t;
+        while(t--)
+        {
+        	double a,b,c,pi=3.1415;
+    	    cin>>a>>b>>c;
+    	    double r=(a*b*c)/sqrt((a+b+c)*(a+b-c)*(a+c-b)*(b+c-a));
+    	    double res=pi*r*r;
+    	    printf("%.4f\n",res);
+        }
+    }
