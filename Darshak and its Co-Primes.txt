@@ -1,0 +1,28 @@
+import java.io.*;
+class Aw
+{
+static long hcf(long a,long b)
+{
+if(b%a==0)
+return a;
+else
+return(hcf(b%a,a));
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long a=Long.parseLong(str[0]);
+long b=Long.parseLong(str[1]);
+long c=hcf(a,b);
+if(c==1)
+System.out.println("Is a Co-Prime");
+else
+System.out.println("Not a Co-Prime");
+}
+}
+}

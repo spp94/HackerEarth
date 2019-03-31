@@ -1,0 +1,30 @@
+import java.io.*;
+class Reversing_A_Number
+{
+void palin(int n)
+{
+int n1=0;
+do
+{
+int r=n%10;
+n1=n1*10+r;
+n=n/10;
+}while(n!=0);
+ 
+if(n1%2==0)
+System.out.println("EVEN");
+else
+System.out.println("ODD");
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+int n=Integer.parseInt(in.readLine());
+Reversing_A_Number obj=new Reversing_A_Number();
+obj.palin(n);
+}
+}
+}

@@ -1,0 +1,66 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Big_P_and_Math
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+String a=in.readLine();
+String []str=a.split(" ");
+String n1=str[0];
+String n2=str[1];
+String num1="",num2="",num3="",num4="";
+int l1=n1.length();
+int l2=n2.length();
+for(int i=0;i<l1;i++)
+{
+char ch=n1.charAt(i);
+if(ch=='6')
+num1=num1+'5';
+else
+num1=num1+ch;
+}
+ 
+for(int i=0;i<l2;i++)
+{
+char ch=n2.charAt(i);
+if(ch=='6')
+num2=num2+'5';
+else
+num2=num2+ch;
+}
+ 
+for(int i=0;i<l1;i++)
+{
+char ch=n1.charAt(i);
+if(ch=='5')
+num3=num3+'6';
+else
+num3=num3+ch;
+}
+ 
+for(int i=0;i<l2;i++)
+{
+char ch=n2.charAt(i);
+if(ch=='5')
+num4=num4+'6';
+else
+num4=num4+ch;
+}
+ 
+ 
+BigInteger a1=new BigInteger(num3);
+BigInteger a2=new BigInteger(num1);
+BigInteger b1=new BigInteger(num4);
+BigInteger b2=new BigInteger(num2);
+ 
+BigInteger sum1=new BigInteger("0");
+BigInteger sum2=new BigInteger("0");
+ 
+sum1=a1.add(b1);
+sum2=a2.add(b2);
+ 
+System.out.println(sum2+" "+sum1);
+}
+}

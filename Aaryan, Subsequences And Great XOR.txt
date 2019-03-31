@@ -1,0 +1,16 @@
+#include<iostream>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll t,n,i;
+cin>>t;
+cin>>n;
+for(ll i=2;i<=t;i++)
+{
+ll u;
+cin>>u;
+n=n|u;
+}
+cout<<(n);
+}

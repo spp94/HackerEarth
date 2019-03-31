@@ -1,0 +1,17 @@
+import java.io.*;
+import java.math.BigInteger;
+class Counting_Traingles_1
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Integer.parseInt(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+BigInteger n=new BigInteger(s);
+BigInteger s1=(n.multiply(new BigInteger("8"))).add((n.subtract(BigInteger.ONE)).multiply(new BigInteger("6")));
+System.out.println(s1);
+}
+}
+}
