@@ -1,0 +1,19 @@
+import java.math.BigInteger;
+import java.io.*;
+import java.math.*;
+class Small
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+int n=Integer.parseInt(in.readLine());
+long m=(n*(n+1))/2;
+double r=(Math.pow(2,n-1));
+long u=(long)r;
+long res=u*m;
+System.out.println(res);
+}
+}

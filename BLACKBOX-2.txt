@@ -1,0 +1,46 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Black_Box2
+{
+static String fact(int n)
+{
+BigInteger factorial=new BigInteger("1");
+for(int i=1;i<=n;i++)
+{
+factorial=factorial.multiply(new BigInteger(i+""));
+}
+return factorial.toString();
+}
+ 
+static long sum(String s)
+{
+long n=Long.parseLong(s),s1=0;
+do
+{
+long r=n%10;
+s1=s1+r;
+n=n/10;
+}while(n!=0);
+return s1;
+}
+ 
+ 
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+int n=Integer.parseInt(in.readLine());
+if(n>0)
+{
+String f=fact(n);
+long s=sum(f);
+System.out.println(s);
+}
+else if(n==0)
+System.out.println("1");
+}
+}
+}

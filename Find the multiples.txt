@@ -1,0 +1,15 @@
+#include<iostream>
+int main()
+{
+long int n,i,c=0;
+std::cin>>n;
+while(n--)
+{
+long int a;
+std::cin>>a;
+if(a%3==0)
+c++;
+}
+std::cout<<c;
+return 0;
+}

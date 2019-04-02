@@ -1,0 +1,32 @@
+import java.util.*;
+import java.math.*;
+class W
+{
+static int prime(int n)
+{
+int i=2,c=0;
+while(n>1)
+  {
+   if(n%i==0)
+    {
+     c=i;
+     n=n/i;
+     break;
+    }
+   else
+    i++;
+  }
+return c;
+}
+public static void main(String...args)throws Exception
+{
+Scanner sc=new Scanner(System.in);
+int t=sc.nextInt();
+while(t-->0)
+{
+int n=sc.nextInt();
+int p=prime(n);
+System.out.println(n-p);
+}
+}
+}
