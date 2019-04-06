@@ -1,0 +1,30 @@
+import java.io.*;
+class karanstrings
+{
+void display(String s)
+{
+s=s+" ";
+int l=s.length();
+for(int j=0;j<l-1;j++)
+{
+char ch=s.charAt(j);
+char ch1=s.charAt(j+1);
+if(ch==ch1)
+continue;
+else
+System.out.print(ch);
+}
+System.out.println("");
+}
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=0;i<T;i++)
+{
+String s1=in.readLine();
+karanstrings ob=new karanstrings();
+ob.display(s1);
+}
+}
+}

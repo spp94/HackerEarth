@@ -1,0 +1,19 @@
+import java.io.*;
+import java.math.*;
+class Abcd
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+String s=in.readLine();
+String []str=s.split(" ");
+for(int i=0;i<str.length;i++)
+{
+BigInteger n=new BigInteger(str[i]);
+if(n.mod(new BigInteger("2")).equals(new BigInteger("0")))
+System.out.println(n);
+if(n.equals(new BigInteger("-1")))
+break;
+}
+}
+}

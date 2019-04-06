@@ -1,0 +1,42 @@
+#include<iostream>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll t;
+cin>>t;
+for(long i=1;i<=t;i++)
+{
+ll a,b;
+cin>>a>>b;
+if(b!=0)
+{
+if(a==0)
+{
+if(b%2==0)
+cout<<"0"<<endl;
+else if(b%2==1)
+cout<<"1"<<endl;
+}
+else if(a==1)
+{
+if(b%2==0)
+cout<<"1"<<endl;
+else if(b%2==1)
+cout<<"0"<<endl;
+}
+else if(a==2)
+{
+if(b%2==0)
+cout<<"0"<<endl;
+else if(b%2==1)
+cout<<"1"<<endl;
+}
+}
+else
+{
+cout<<a<<endl;
+}
+}
+return 0;
+}

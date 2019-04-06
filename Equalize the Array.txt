@@ -1,0 +1,92 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Solution {
+
+    // Complete the equalizeArray function below.
+    static int equalizeArray(int[] arr) {
+       int[] frequency = new int[101];
+            for(int j = 0; j < arr.Length; j++)
+            {
+                frequency[arr[j]]++;
+            }
+
+
+            int max = 0, count = 0, min = 100;
+            foreach (var item in frequency)
+            {
+                if(item >= max && item != 0)
+                {
+                    max = item;
+                }
+                if(item <= min && item != 0)
+                {
+                    min = item;
+                }
+            }
+
+            int c = 0;
+            foreach (var item in frequency)
+            {
+                if(item == max)
+                {
+                    c += 1;
+                }
+            }
+            
+                if(min != max)
+                {
+                foreach (var item in frequency)
+                {
+                    if (item != max && item != 0)
+                    {
+                        count += item;
+                    }
+                    if(item == max && c > 1)
+                    {
+                        count += item;
+                        c -= 1;
+                    }
+                }
+                return(count);
+                }
+                else
+                {
+                foreach (var item in frequency)
+                {
+                    if(item == min && item != 0)
+                    {
+                        count += 1;
+                    }
+                }
+
+                return((count-1)*min); 
+                }
+    }
+
+    static void Main(string[] args) {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
+        ;
+        int result = equalizeArray(arr);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}

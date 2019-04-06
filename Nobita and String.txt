@@ -1,0 +1,19 @@
+import java.io.*;
+class swap
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=0;i<T;i++)
+{
+String s=in.readLine();
+String str[] = s.split(" ");
+for(int j = str.length-1; j>= 0 ;j--)
+{
+System.out.print(str[j]+" ");
+}
+System.out.println();
+}
+}
+}
