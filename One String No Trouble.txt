@@ -1,0 +1,37 @@
+/******************************************************************************
+ 
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+ 
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String...args)
+	{
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		int max = 0, len = input.length();
+		for(int i = 0; i < len; i++)
+		{
+			int count = 1;
+			for(int j = i; j<len-1; j++)
+			{
+				if(input.charAt(j) != input.charAt(j+1))
+				{
+					count += 1;
+				}
+				else
+				{
+					break;
+				}
+			}
+			if(max <= count)
+			{
+				max = count;
+			}
+		}
+		System.out.println(max);
+	}
+}
