@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#include<vector>
+using namespace std;
+ 
+int main()
+{
+  long long int t,i;
+  scanf("%lld",&t);
+  long long int sum=0;
+  vector<long long int> cat(t);
+  vector<long long int> diet(t);
+  
+  for(i=0;i<t;i++){
+  scanf("%lld",&cat[i]);	
+  }
+    for(i=0;i<t;i++){
+  	scanf("%lld",&diet[i]);
+  } 
+   
+   sort(cat.begin(),cat.end());
+   sort(diet.begin(),diet.end());
+   
+    for(i=0;i<t;i++){
+   	sum=sum+cat[i]*diet[i];
+   }
+   
+   cout<<sum<<endl;
+   
+   return 0;
+}

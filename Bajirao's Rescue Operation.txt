@@ -1,0 +1,26 @@
+#include<stdio.h>
+int fact(int n)
+{
+ int f=1,i;
+for(i=1;i<=n;i++)
+f=f*i;
+return f;
+}
+int main()
+{
+//printf("Enter test cases:");
+int T,i;
+scanf("%d \n",&T);
+for(i=1;i<=T;i++)
+{
+int n,m,j;
+scanf("%d %d",&n,&m);
+for(j=1;j<=m;j++)
+{
+int f=fact(n);
+n=f;
+}
+printf("%d \n",(n%107));
+}
+return 0;
+}

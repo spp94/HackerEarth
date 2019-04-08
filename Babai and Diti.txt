@@ -1,0 +1,41 @@
+/******************************************************************************
+ 
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+ 
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+	Scanner sc = new Scanner(System.in);
+	int t = sc.nextInt();
+	sc.nextLine();
+	while(t-- != 0)
+	{
+	    int n = sc.nextInt();
+	    sc.nextLine();
+	    String s = sc.nextLine();
+	    String[] str = s.trim().split(" ");
+	    s = s.replaceAll(" ","");
+	    int max = 0;
+	    for(int i = 0; i < str.length; i++)
+	    {
+	        //System.out.println("----------------------------------");
+	        int firstIndex = s.indexOf(str[i]);
+	        int lastIndex = s.lastIndexOf(str[i]);
+	        //System.out.println("First Index of " +str[i] +" = "+firstIndex);
+	        //System.out.println("Last Index of " +str[i] +" = "+lastIndex);
+	        int diff = lastIndex - firstIndex + 1;
+	        if(max <= diff)
+	        {
+	            max = diff;
+	        }
+	        //System.out.println("----------------------------------");
+	    }
+	    System.out.println(max);
+	}
+	}
+}
