@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Solution {
+
+    // Complete the solve function below.
+    static string solve(int n)
+        {
+            int i = 1;
+            while(true)
+            {
+                long prod = n * i;
+                if (containsonly0and1(prod.ToString()))
+                {
+                    return prod.ToString();
+                }
+                i = i + 1;
+            }
+        }
+
+        static bool containsonly0and1(String s)
+        {
+            int count = 0;
+            foreach (var item in s)
+            {
+                if(item != '9' && item != '0')
+                {
+                    count = 1;
+                    break;
+                }
+            }
+            return count == 0;
+        }
+    static void Main(string[] args) {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int t = Convert.ToInt32(Console.ReadLine());
+
+        for (int tItr = 0; tItr < t; tItr++) {
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            string result = solve(n);
+
+            textWriter.WriteLine(result);
+        }
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}

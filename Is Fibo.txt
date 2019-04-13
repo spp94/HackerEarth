@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Solution {
+
+    // Complete the solve function below.
+    static string solve(long n)
+        {
+            return (isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4) == true) ? "IsFibo" : "IsNotFibo";
+        }
+
+        public static bool isPerfectSquare(long x)
+        {
+            int s = (int)Math.Sqrt(x);
+            return (s * s == x);
+        }
+
+    static void Main(string[] args) {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int t = Convert.ToInt32(Console.ReadLine());
+
+        for (int tItr = 0; tItr < t; tItr++) {
+            long n = Convert.ToInt64(Console.ReadLine());
+
+            string result = solve(n);
+
+            textWriter.WriteLine(result);
+        }
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
