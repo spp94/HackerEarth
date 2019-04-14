@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+class sherlock_and_date
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int i=0;i<t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+String str1[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+int l=str.length;
+int d=Integer.parseInt(str[0]);
+int y=Integer.parseInt(str[2]);
+if(d==1 && str[1].equals("January"))
+{
+y=y-1;
+System.out.println("31 December"+" "+y);
+}
+else if(d==1 && str[1].equals("March") && ((y%4==0) && (y%100!=0) || (y%400==0)))
+{
+System.out.println("29 February"+" "+y);
+}
+else if(d==1 && str[1].equals("March"))
+{
+	System.out.println("28 February"+" "+y);
+}
+else if(d==1 && (str[1].equals("February") || str[1].equals("April") || str[1].equals("June") || str[1].equals("August") || str[1].equals("September") || str[1].equals("November"))) 
+{
+int x=Arrays.asList(str1).indexOf(str[1]);
+str[1]=str1[x-1];
+System.out.println("31"+" "+str[1]+" "+y);
+}
+else if(d==1 && (str[1].equals("May") || str[1].equals("July") || str[1].equals("October") || str[1].equals("December"))) 
+{
+int f=Arrays.asList(str1).indexOf(str[1]);
+str[1]=str1[f-1];
+System.out.println("30"+" "+str[1]+" "+y);
+}
+else if(d>=2 && d<=31)
+{
+d=d-1;
+System.out.println(d+" "+str[1]+" "+y);
+}
+}
+}
+}

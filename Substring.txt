@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+class Shubham
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int i=1;i<=t;i++)
+{
+String s=in.readLine();
+process(s);
+}
+}
+public static boolean check(char c)
+{
+return(c=='a'||c=='A'||c=='B'||c=='b'||c=='c'||c=='C');
+}
+ 
+ 
+public static void process(String str)
+{
+int cnt=0;
+for(int i=0;i<str.length();i++)
+{
+if(check(str.charAt(i)))
+cnt++;
+}
+for(int j=0;j<str.length();j++)
+{
+if(check(str.charAt(j)))
+{
+int k=j+1,p=0;
+while(k<str.length()&&check(str.charAt(k)))
+{
+p++;
+k++;
+}
+cnt+=p;
+}
+}
+System.out.println(cnt);
+}
+ 
+ 
+ 
+ 
+}

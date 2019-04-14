@@ -1,0 +1,77 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class Y
+{
+static long hcf(long a,long b)
+{
+if(b%a==0)
+return a;
+else
+return(hcf(b%a,a));
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());;
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long a=Long.parseLong(str[0]),b=Long.parseLong(str[1]),c=Long.parseLong(str[2]);
+long l,d,h=0;
+if(a==0 || b==0 || c==0)
+{
+System.out.println("NO");
+}
+else
+{
+long h2=hcf(a,b);
+long h1=hcf(h2,c);
+ 
+if(h1==1)
+{
+if(a>b && a>c)
+{
+h=a*a;
+d=b*b;
+l=c*c;
+if(h==(l+d))
+System.out.println("YES");
+else if(h!=(l+d))
+System.out.println("NO");
+}
+ 
+else if(b>c && b>a)
+{
+h=b*b;
+d=a*a;
+l=c*c;
+if(h==(l+d))
+System.out.println("YES");
+else if(h!=(l+d))
+System.out.println("NO");
+}
+ 
+else if(c>a && c>b)
+{
+h=c*c;
+d=a*a;
+l=b*b;
+if(h==(l+d))
+System.out.println("YES");
+else if(h!=(l+d))
+System.out.println("NO");
+}
+}
+ 
+else
+{
+System.out.println("NO");
+}
+}
+}
+ 
+}
+ 
+}
