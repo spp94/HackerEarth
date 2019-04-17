@@ -1,0 +1,32 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+class W
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+int u=Integer.parseInt(str[0]);
+BigInteger k=new BigInteger(str[0]);
+int n=Integer.parseInt(str[1]);
+BigInteger l=new BigInteger("0");
+l=k;
+BigInteger m=k.pow(n+1);
+m=m.subtract(new BigInteger("1"));
+l=l.subtract(new BigInteger("1"));
+l=m.divide(l);
+String s1=""+l;
+int sum=0;
+for(int j=0;j<s1.length();j++)
+{
+sum+=s1.charAt(j)-'0';
+}
+System.out.println(sum);
+}
+}
+}

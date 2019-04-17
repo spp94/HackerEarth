@@ -1,0 +1,32 @@
+import java.io.*;
+class Streak
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=0;i<T;i++)
+{
+int n=Integer.parseInt(in.readLine());
+int n1=0,n2=0,n3=0,n4=0,n5=0,n6=0,m=n;
+while(n>0)
+{
+n1=n%10;
+n=n/10;
+n2=n%10;
+n=n/10;
+n3=n%10;
+n=n/10;
+n4=n%10;
+n=n/10;
+n5=n%10;
+n=n/10;
+n6=n%10;
+}
+if((n6==2 && n5==1)||(n5==2 && n4==1)||(n4==2 && n3==1)||(n3==2 && n2==1)||(n2==2 && n1==1)||(m%21==0))
+System.out.println("The streak is broken!");
+else
+System.out.println("The streak lives still in our heart!");
+}
+}
+}

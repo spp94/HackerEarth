@@ -1,0 +1,31 @@
+import java.util.*;
+import java.math.*;
+class Tr
+{
+public static void main(String...args)throws Exception
+{
+Scanner sc=new Scanner(System.in);
+long t=sc.nextLong();
+while(t-->0)
+{
+int num=sc.nextInt();
+long a[]=new long[num],max=-99999;
+for(int i=0;i<num;i++)
+{
+a[i]=sc.nextLong();
+if(max<a[i])
+max=a[i];
+}
+long min=0;
+for(int i=0;i<num;i++)
+{
+for(int j=i+1;j<num;j++)
+{
+min=min+Math.abs(a[i]-a[j]);
+}
+}
+ 
+System.out.println((min*max)%1000000007);
+}
+}
+}

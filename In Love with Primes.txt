@@ -1,0 +1,44 @@
+import java.io.*;
+class Love_With_Primes
+{
+int prime(int n)
+{
+int c=1;
+for(int i=2;i<=n;i++)
+{
+if(n%i==0)
+c++;
+}
+if(c==2)
+return 1;
+else
+return 0;
+}
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+int n=Integer.parseInt(in.readLine()),c=0;
+for(int j=2;j<=n;j++)
+{
+Love_With_Primes obj=new Love_With_Primes();
+int a=obj.prime(j);
+if(a==1)
+{
+int b=obj.prime(n-j);
+if(b==1)
+{
+c++;
+break;
+}
+}
+}
+if(c!=1)
+System.out.println("Arjit");
+else
+System.out.println("Deepa");
+}
+}
+}

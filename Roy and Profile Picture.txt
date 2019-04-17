@@ -1,0 +1,27 @@
+import java.io.*;
+class Abc
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long l=Long.parseLong(in.readLine());
+long n=Long.parseLong(in.readLine());
+for(long i=1;i<=n;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+long w=Long.parseLong(str[0]),h=Long.parseLong(str[1]);
+if(w<l || h<l)
+{
+System.out.println("UPLOAD ANOTHER");
+}
+else if(w>=l && h>=l)
+{
+if(w==h)
+System.out.println("ACCEPTED");
+else
+System.out.println("CROP IT");
+}
+}
+}
+}
