@@ -1,0 +1,49 @@
+import java.util.*;
+import java.io.*;
+public class CandidateCode 
+{
+public static void main(String...args)
+{
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int m = sc.nextInt();
+int p = sc.nextInt();
+int q = sc.nextInt();
+//System.out.println(n+" "+m+" "+p+" "+q);
+int length = 0, breadth = 0, total_count =0;
+for(int i = n; i <= m; i++)
+{
+    for(int j = p; j <= q; j++)
+    {
+        length = i;
+        breadth = j;
+        //System.out.print("Length : "+length +" and Breadth = "+breadth +" Count = ");
+        int count = 1;
+        if(length == breadth)
+        {
+            total_count += 1;
+            //System.out.println("1");
+        }
+        else
+        {
+         while(length != breadth)
+        {
+            if(length > breadth)
+            {
+                length -= breadth;
+            }
+            else
+            {
+                breadth -= length;
+            }
+            count += 1;
+        }
+        //System.out.println(count);
+        total_count += count;
+        }
+        
+    }
+}
+System.out.print(total_count);
+}
+}

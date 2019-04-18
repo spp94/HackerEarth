@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+public class CandidateCode 
+{
+public static void main(String...args)
+{
+Scanner sc = new Scanner(System.in);
+String s1 = sc.nextLine().trim();
+String s2 = sc.nextLine().trim();
+s1 = s1.replaceAll(" ","");
+s2 = s2.replaceAll(" ","");
+if(s1.length() == s2.length())
+{
+s1 = s1 + s1;
+//System.out.println(s1);
+//System.out.println(s2);
+if(s1.contains(s2))
+{
+  System.out.print("Yes");  
+}
+else
+{
+  System.out.print("No");
+}
+}
+else
+{
+System.out.print("No");
+}
+}
+}
