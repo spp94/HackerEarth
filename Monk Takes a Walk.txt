@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+
+public class TestClass 
+{
+	public static void main(String[] args) 
+	{
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    sc.nextLine();
+	    while(n-- != 0)
+	    {
+	     String input = sc.nextLine();
+		 System.out.println(countValidTrees(input.toLowerCase()));   
+	    }
+	}
+	
+	public static int countValidTrees(String s)
+	{
+		int count = 0;
+		String vowel = "aeiou";
+		for(int i = 0; i < s.length(); i++)
+		{
+			if(vowel.contains(s.charAt(i)+"")) count += 1;
+		}
+		return count;
+	}
+}
