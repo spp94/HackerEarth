@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Main
+
+{
+public static void main(String...args)
+{
+Scanner sc = new Scanner(System.in);
+int t = sc.nextInt();
+sc.nextLine();
+while(t-- != 0)
+{
+String[] str = sc.nextLine().trim().split(" ");
+String s = str[0];
+int f = Integer.parseInt(str[1]);
+
+int l = Integer.parseInt(str[2]);
+String s1 = s.substring(f,l+1);
+char[] c = new char[s1.length()];
+for(int i = 0; i < s1.length(); i++)
+{
+c[i] = s1.charAt(i);
+}
+
+Arrays.sort(c);
+String sr = "";
+for(int i = s1.length()-1; i >= 0; i--)
+{
+sr = sr + c[i];
+
+}
+System.out.println(s.substring(0,f)+sr+s.substring(l+1));
+
+}
+
+}
+
+}

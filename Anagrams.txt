@@ -1,0 +1,53 @@
+import java.util.*;
+import java.math.*;
+class TestClass
+{
+	public static void main(String...args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		sc.nextLine();
+		while(t-- != 0)
+		{
+			String a = sc.nextLine().trim().toLowerCase();
+			String b = sc.nextLine().trim().toLowerCase();
+			//String str = (a+b).toLowerCase();
+			int[] freq1 = new int[26];
+			for(int i = 0;i < a.length(); i++)
+			{
+				freq1[a.charAt(i)-97]++;
+			}
+			
+			int[] freq2 = new int[26];
+			for(int i = 0;i < b.length(); i++)
+			{
+				freq2[b.charAt(i)-97]++;
+			}
+			
+			for(int i = 0; i < 26; i++)
+			{
+			   // System.out.println("Frequency of "+(char)(97+i) +" is = "+freq1[i] +" and = "+freq2[i]);
+			}
+			int count = 0;
+			for(int i = 0; i < 26; i++)
+			{
+			    if(freq1[i] != 0 || freq2[i] != 0)
+			    {
+			        if(freq1[i] == freq2[i])
+				    {
+				    count += 0;
+				    }
+				    else
+				    {
+				    count += Math.abs(freq1[i]-freq2[i]);
+				    }
+			    }
+			    else
+			    {
+			        // do nothing
+			    }
+			}
+			System.out.println(count);
+		}
+	}
+}
