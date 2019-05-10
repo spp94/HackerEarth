@@ -1,50 +1,18 @@
-#include<bits/stdc++.h>
-
-using namespace std;
-
-unsigned long long arr[1010];
-
-unsigned long long compute(int x)
-
+import java.util.*;
+class Pandey
 {
-
-if(arr[x]!=0)
-
-return arr[x];
-
-if(x==0)
-
-return 1;
-
-unsigned long long ans = 0;
-
-if(x >=1)
-
-ans += compute(x-1);
-
-if(x>=2)
-
-ans+= compute(x-2);
-
-arr[x] = ans;
-
-assert(arr[x]>=0);
-
-return ans;
-
+public static void main(String...args)throws Exception
+{
+Scanner sc=new Scanner(System.in);
+int a=sc.nextInt(),b=sc.nextInt(),n=sc.nextInt(),sum=0,c=0;
+do
+{
+	c++;
+sum=sum+a;
+if(sum>=n)
+break;
+sum=sum-b;
+}while(sum!=n && sum<n);
+System.out.println(c);
 }
-
-int main()
-{
-
-compute(1000);
-int t;
-cin>>t;
-while(t--)
-{
-int a;
-cin>>a;
-cout<<arr[a]<<endl;
-}
-
 }

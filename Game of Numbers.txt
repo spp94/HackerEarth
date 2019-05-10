@@ -1,0 +1,30 @@
+import java.io.*;
+class game_of_numbers
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int i=0;i<t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+int n=Integer.parseInt(str[0]);
+int m=Integer.parseInt(str[1]);
+int c=0;
+for(int j=n;j<=m;j++)
+{
+//	int f=(int)Math.sqrt(j);
+for(int k=j;k>1;k--)
+{
+if(j%(k*k)==0)
+{
+c++;
+break;
+}
+}
+}
+System.out.println(m-n+1-c);
+}
+}
+}

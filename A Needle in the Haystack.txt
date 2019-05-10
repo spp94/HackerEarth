@@ -1,0 +1,38 @@
+import java.io.*;
+     
+    class A
+    {
+     
+    	public static void main(String[] args) throws IOException {
+ 
+    		 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    	        String line = in.readLine();
+    	       
+    	        int N = Integer.parseInt(line);
+    	        for (int i = 0; i < N; i++) {
+    	        	 String Ned =in.readLine();
+    	 	         String Hey = in.readLine();
+    	 	         if(Check(Ned, Hey))
+    	 	        	 System.out.println("YES");
+    	 	         else
+    	 	        	System.out.println("NO");
+    	 	         
+    	        	
+    	        	
+    	        }
+    	}
+    	
+    	public static boolean Check(String Needle, String HayStack)
+    	{
+    		 StringBuffer buffer = new StringBuffer(Needle);
+             String rev_buffer = buffer.reverse().toString();
+             
+             if(HayStack.contains(Needle))
+                 return true;
+             else if(HayStack.contains(rev_buffer))
+                 return true;
+             else
+                 return false;
+    	}
+     
+    }

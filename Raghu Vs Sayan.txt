@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+class raghu_vs_sayan
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int t=Integer.parseInt(in.readLine());
+for(int i=0;i<t;i++)
+{
+String s=in.readLine();
+String []str=s.split(" ");
+int a=Integer.parseInt(str[0]);
+int b=Integer.parseInt(str[1]);
+int d=Integer.parseInt(str[2]);
+int c[]=new int[d];
+String s1=in.readLine();
+String []str1=s1.split(" ");
+for(int j=0;j<d;j++)
+{
+c[j]=Integer.parseInt(str1[j]);
+}
+Arrays.sort(c);
+int e=a,f=b;
+int c1=0,c2=0;
+for(int j=0;j<d;j++)
+{
+if(c[j]<=e)
+{
+c1++;
+e=e-c[j];
+}
+if(c[j]<=f)
+{
+c2++;
+f=f-c[j];
+}
+}
+if(c1>c2)
+System.out.println("Raghu Won");
+else if(c2>c1)
+System.out.println("Sayan Won");
+else if(c1==c2)
+System.out.println("Tie");
+}
+}
+}
