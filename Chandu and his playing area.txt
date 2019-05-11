@@ -1,0 +1,30 @@
+import java.io.*;
+import java.math.BigInteger;
+class A
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+int T=Integer.parseInt(in.readLine());
+for(int i=1;i<=T;i++)
+{
+String s=in.readLine();
+BigInteger n=new BigInteger(s);
+BigInteger h=new BigInteger("2");
+BigInteger x=n.divide(h);
+if(x.remainder(h)!=BigInteger.ZERO)
+{
+BigInteger c=(x.add(BigInteger.ONE)).divide(h);
+BigInteger c1=(x.subtract(BigInteger.ONE)).divide(h);
+BigInteger d=c.multiply(c1);
+System.out.println(d);
+}
+else
+{
+BigInteger y=x.divide(h);
+BigInteger e=y.multiply(y);
+System.out.println(e);
+}
+}
+}
+}

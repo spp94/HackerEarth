@@ -1,0 +1,30 @@
+import java.io.*;
+class Little_Jhool_nd_His_Breakup
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+String s=in.readLine();
+int a=s.indexOf('l'),b=0,c=0,d=0;
+if(a!=-1)
+{
+s=s.substring(a);
+b=s.indexOf('o');
+if(b!=-1)
+{
+s=s.substring(b);
+c=s.indexOf('v');
+if(c!=-1)
+{
+s=s.substring(c);
+d=s.indexOf('e');
+}
+}
+}
+//System.out.println(a+"  "+b+"  "+c+"  "+d);
+if((a!=-1 && b!=-1 && c!=-1 && d!=-1))
+System.out.println("I love you, too!");
+else
+System.out.println("Let us breakup!");
+}
+}

@@ -1,0 +1,17 @@
+import java.io.*;
+class A
+{
+public static void main(String...args)throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+long t=Long.parseLong(in.readLine());
+for(long i=1;i<=t;i++)
+{
+long n=Long.parseLong(in.readLine());
+if(n>1)
+System.out.println(n-1);
+else
+System.out.println("0");
+}
+}
+}

@@ -1,0 +1,13 @@
+import java.io.*;
+class little_jhool_and_psychic_powers
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+String s=in.readLine();
+if(s.contains("000000") || s.contains("111111"))
+System.out.println("Sorry, sorry!");
+else
+System.out.println("Good luck!");
+}
+}

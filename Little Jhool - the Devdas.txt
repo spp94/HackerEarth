@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+class little_jhool_the_devdas
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			Scanner sc=new Scanner(System.in);
+			int n=sc.nextInt();
+			int a[]=new int[n];
+			for(int i=0;i<n;i++)
+			{
+				a[i]=sc.nextInt();
+			}
+			Arrays.sort(a);
+			int max=0;
+			for(int i=0;i<n;i++)
+			{
+				int s=0;
+				for(int j=i;j<n;j++)
+				{
+					s=s+a[j];
+					if(s%2!=0)
+					{
+						if(s>max)
+						max=s;
+					}
+				}
+			}
+			if(max>0)
+			System.out.println(max);
+			else
+			System.out.println(":(");
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+}
