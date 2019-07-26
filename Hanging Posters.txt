@@ -1,0 +1,67 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'solve' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER h
+     *  2. INTEGER_ARRAY wallPoints
+     *  3. INTEGER_ARRAY lengths
+     */
+
+    public static int solve(int h, List<int> wallPoints, List<int> lengths)
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i < wallPoints.Count; i++)
+            {
+                int h_ = lengths[i] / 4;
+                int r_ = wallPoints[i] - h_;
+                int res = (h <= r_) ? r_ - h : 0;
+                result.Add(res);
+            }
+            result.Sort();
+            return (result[wallPoints.Count - 1]);
+        }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+
+        int n = Convert.ToInt32(firstMultipleInput[0]);
+
+        int h = Convert.ToInt32(firstMultipleInput[1]);
+
+        List<int> wallPoints = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(wallPointsTemp => Convert.ToInt32(wallPointsTemp)).ToList();
+
+        List<int> lengths = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(lengthsTemp => Convert.ToInt32(lengthsTemp)).ToList();
+
+        int answer = Result.solve(h, wallPoints, lengths);
+
+        textWriter.WriteLine(answer);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
