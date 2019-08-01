@@ -1,0 +1,79 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the anagram function below.
+    static int anagram(String s) 
+    {
+        int l = s.length();
+        if(l%2 == 1)
+        {
+            return -1;
+        }
+        else
+        {
+            String s1 = s.substring(0,l/2);
+            int[] f1 = new int[26];
+            for(int i = 0; i < s1.length(); i++)
+            {
+                f1[s1.charAt(i)-97]++;
+            }
+            String s2 = s.substring(l/2);
+            System.out.println(s1+" "+s2);
+            int[] f2 = new int[26];
+            for(int i = 0; i < s2.length(); i++)
+            {
+                f2[s2.charAt(i)-97]++;
+            }
+            for(int i = 0; i < 26; i++)
+            {
+                System.out.println((char)(i+97)+" F1 = "+f1[i]+" F2 = "+f2[i]);
+            }
+            int result = 0;
+            for(int i = 0; i < 26; i++)
+            {
+                if(f1[i] == 0 && f2[i] != 0)
+                {
+                    result += f2[i];
+                }
+                else if(f1[i] != 0 && f2[i] == 0)
+                {
+                    result += 0;
+                }
+                else
+                {
+                    result += (f2[i]>f1[i])?(f2[i]-f1[i]):0;
+                }
+            }
+            return result;
+        }
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int q = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int qItr = 0; qItr < q; qItr++) {
+            String s = scanner.nextLine();
+
+            int result = anagram(s);
+
+            bufferedWriter.write(String.valueOf(result));
+            bufferedWriter.newLine();
+        }
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}

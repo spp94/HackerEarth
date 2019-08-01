@@ -1,0 +1,127 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the biggerIsGreater function below.
+    static String biggerIsGreater(String w)
+    {
+        char[] arr = new char[w.length()];
+        if(w.length() == 1)
+        {
+            return "no answer";
+        }
+        else if(w.length() == 2)
+        {
+            if(w.charAt(0) < w.charAt(1))
+            {
+                return(w.charAt(1)+""+w.charAt(0));
+            }
+            else
+            {
+                return "no answer";
+            }
+        }
+        else
+        {
+        for(int i = 0; i < w.length(); i++)
+        {
+            arr[i] = w.charAt(i);
+        }
+        boolean flag = false;
+        for(int i = w.length()-1; i > 0; i--)
+        {
+            if(arr[i-1] >= arr[i])
+            {
+                continue;
+            }
+            else
+            {
+                flag = true;
+                for(int j = i; j < w.length(); j++)
+                {
+                    for(int k = i; k < w.length()-1; k++)
+                    {
+                        if(arr[k] > arr[k+1])
+                        {
+                            char temp1 = arr[k];
+                            arr[k] = arr[k+1];
+                            arr[k+1] = temp1;
+                        }
+                    }
+                }
+                for(int i1 = 0; i1 < w.length(); i1++)
+                {
+                    System.out.print(arr[i1]+" ");
+                }
+                System.out.println();
+                int min_pos = 0;
+                for(int j = i; j < w.length(); j++)
+                {
+                    if(arr[i-1] < arr[j])
+                    {
+                        min_pos = j;
+                        break;
+                    }
+                }
+                char temp = arr[i-1];
+                arr[i-1] = arr[min_pos];
+                arr[min_pos] = temp;
+                for(int j = i; j < w.length(); j++)
+                {
+                    for(int k = i; k < w.length()-1; k++)
+                    {
+                        if(arr[k] > arr[k+1])
+                        {
+                            char temp1 = arr[k];
+                            arr[k] = arr[k+1];
+                            arr[k+1] = temp1;
+                        }
+                    }
+                }
+                break;
+            }
+        }
+        if(flag)
+        {
+            String res = "";
+            for(int i = 0; i < w.length(); i++)
+            {
+                res = res + arr[i];
+            }
+            return res;
+        }
+        else
+        {
+            return "no answer";
+        }
+        }
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int T = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int TItr = 0; TItr < T; TItr++) {
+            String w = scanner.nextLine();
+
+            String result = biggerIsGreater(w);
+
+            bufferedWriter.write(result);
+            bufferedWriter.newLine();
+        }
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}

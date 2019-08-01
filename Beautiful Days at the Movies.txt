@@ -1,0 +1,60 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    static int reverse(int num)
+    {
+        int rev = 0;
+        do
+        {
+            int r = num % 10;
+            rev = rev*10 + r;
+            num = num / 10;
+        }while(num != 0);
+        return rev;
+    }
+    // Complete the beautifulDays function below.
+    static int beautifulDays(int i, int j, int k1) 
+    {
+        int result = 0;
+        for(int k = i; k <= j; k++)
+        {
+            int rev = reverse(k);
+            int res = Math.abs(rev-k);
+            //System.out.println(res);
+            if(res % k1 == 0)
+            {
+                result++;
+            }
+        }
+        return result;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] ijk = scanner.nextLine().split(" ");
+
+        int i = Integer.parseInt(ijk[0]);
+
+        int j = Integer.parseInt(ijk[1]);
+
+        int k = Integer.parseInt(ijk[2]);
+
+        int result = beautifulDays(i, j, k);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}

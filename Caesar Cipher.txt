@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class HelloWorld {
+
+    public static void main(String[] args)throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        int l=Integer.parseInt(in.readLine());
+        String s=in.readLine();
+        int k=Integer.parseInt(in.readLine());
+        k=k%26;
+        for(int i=0;i<l;i++)
+            {
+            char ch=s.charAt(i);
+            int y=ch+k;
+                if(ch>='A' && ch<='Z')
+                    {
+            if(y<=90)
+                System.out.print((char)y);
+            else
+                System.out.print((char)(y-90+64));
+                }
+                else if(ch>='a' && ch<='z')
+                    {
+                     if(y<=122)
+                System.out.print((char)y);
+            else
+                System.out.print((char)(y-122+96));
+                }
+            else
+                {
+                System.out.print(ch);
+            }
+            }
+        }
+            
+    
+}

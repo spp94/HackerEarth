@@ -1,0 +1,81 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the acmTeam function below.
+    static int[] acmTeam(String[] topic) 
+    {
+     int l = topic.length, counter = 0;
+     int[] res = new int[2];
+     int[] count = new int[l*l];
+     for(int i = 0; i < l; i++)
+     {
+         for(int j = i+1; j < l; j++)
+         {
+             int c = 0;
+             for(int k = 0; k < topic[i].length(); k++)
+             {
+                 if(topic[i].charAt(k) == '1' || topic[j].charAt(k) == '1')
+                 {
+                     c += 1;
+                 }
+             }
+             count[counter] = c;
+             counter++;
+         }
+     }
+     Arrays.sort(count);
+     int result = 0, max = count[count.length-1];
+     for(int i = 0; i < count.length; i++)
+     {
+         if(max == count[i])
+         {
+             result += 1;
+         }
+     }
+     res[0] = max;
+     res[1] = result;
+     return res;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] nm = scanner.nextLine().split(" ");
+
+        int n = Integer.parseInt(nm[0]);
+
+        int m = Integer.parseInt(nm[1]);
+
+        String[] topic = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            String topicItem = scanner.nextLine();
+            topic[i] = topicItem;
+        }
+
+        int[] result = acmTeam(topic);
+
+        for (int i = 0; i < result.length; i++) {
+            bufferedWriter.write(String.valueOf(result[i]));
+
+            if (i != result.length - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
