@@ -1,60 +1,60 @@
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
-using System.Text;
-using System;
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-class Solution {
+public class Solution {
 
     // Complete the countingValleys function below.
-    static int countingValleys(int n, string s) 
+    static int countingValleys(int n, String s) 
     {
-            int count = 0, ground = 0;
-            bool start = false;
-            for(int i = 0; i < s.Length; i++)
+        int count = 0, sum = 0, l = s.length();
+        boolean flag = false;
+        //int index = s.indexOf('D');
+        //System.out.println("Index = "+index);
+        for(int i = 0; i < l; i++)
+        {
+            if(s.charAt(i) == 'D')
             {
-                if(s[i] == 'U')
-                {
-                    ground += 1;
-                }
-                else
-                {
-                    ground -= 1;
-                }
-                if(ground < 0)
-                {
-                    start = true;
-                }
-                if(start && ground >= 0)
-                {
-                    start = false;
-                    count += 1;
-                }
+                sum = sum - 1;
             }
-            return count;
-
+            else
+            {
+                sum = sum + 1;
+            }
+            if(sum < 0)
+            {
+                flag = true;
+            }
+            if(flag && sum >= 0)
+            {
+                flag = false;
+                count++;
+            }   
+        }
+        return count;
     }
 
-    static void Main(string[] args) {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+    private static final Scanner scanner = new Scanner(System.in);
 
-        int n = Convert.ToInt32(Console.ReadLine());
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        string s = Console.ReadLine();
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        String s = scanner.nextLine();
 
         int result = countingValleys(n, s);
 
-        textWriter.WriteLine(result);
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
 
-        textWriter.Flush();
-        textWriter.Close();
+        bufferedWriter.close();
+
+        scanner.close();
     }
 }
