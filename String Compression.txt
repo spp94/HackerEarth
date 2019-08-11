@@ -1,0 +1,61 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String res = compressString("aaaaa",2);
+		System.out.println("Result = "+res);
+	}
+	public static String compressString(String s, int k)
+	{
+	    s = s + " ";
+	    int count = 1;
+	    for(int i = 0; i < s.length()-1; i++)
+	    {
+	        //System.out.println("I = "+i+" Length = "+s.length());
+	        char ch1 = s.charAt(i);
+	        char ch2 = s.charAt(i+1);
+	        if(ch1 == ch2)
+	        {
+	            count++;
+	            //System.out.println(ch1+" "+ch2+" "+count);
+	            //System.out.println(s.charAt(i)+" "+count);
+	            if(count == k)
+	            {
+	                String s1 = "";
+	                if(i-k+1 < 0)
+	                s1 = s.substring(0,0);
+	                else
+	                s1 = s.substring(0,i-k+2);
+	                String s2 = s.substring(i+2);
+	                //System.out.println(s1+" "+s2);
+	                s = s1+s2;
+	                //System.out.println("Compressed String = "+s);
+	                i = -1;
+	                count = 1;
+	            }
+	        }
+	        else
+	        {
+	            //System.out.println(s.charAt(i)+" "+count);
+	            if(count == k)
+	            {
+	                String s1 = s.substring(0,i-k+1);
+	                String s2 = s.substring(i+1);
+	                //System.out.println(s1+" "+s2);
+	                s = s1+s2;
+	                //System.out.println("Compressed String = "+s);
+	                i = -1;
+	            }
+	            count = 1;
+	        }
+	    }
+	    return s;
+	}
+}
