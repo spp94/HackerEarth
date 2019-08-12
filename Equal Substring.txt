@@ -1,0 +1,23 @@
+import java.util.*;
+class Main 
+{
+    public static void main(String...args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int n = s.length()-1;
+        boolean flag = false;
+        for(int i = 0; i < s.length()/2; i++)
+        {
+            String start = s.substring(0,i+1);
+            String end = s.substring(n-i);
+            System.out.println(start+" "+end);
+            if(start.equals(end))
+            {
+                flag = true;
+                break;
+            }
+        }
+        System.out.println(flag ? "YES" : "NO");
+    }
+}
