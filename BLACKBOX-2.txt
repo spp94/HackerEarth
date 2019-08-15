@@ -36,7 +36,7 @@ int n=Integer.parseInt(in.readLine());
 if(n>0)
 {
 String f=fact(n);
-long s=sum(f);
+long s=sum(f); 
 System.out.println(s);
 }
 else if(n==0)
