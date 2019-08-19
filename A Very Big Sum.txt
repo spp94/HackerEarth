@@ -12,7 +12,7 @@ public class Solution {
     static long aVeryBigSum(long[] ar) 
     {
         long sum = 0;
-      for(Long item : ar)
+      for(Long item : ar) 
       {
           sum = sum + item;
       }
