@@ -20,7 +20,7 @@ class little_jhool_the_devdas
 				int s=0;
 				for(int j=i;j<n;j++)
 				{
-					s=s+a[j];
+					s=s+a[j]; 
 					if(s%2!=0)
 					{
 						if(s>max)
