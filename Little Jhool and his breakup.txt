@@ -22,7 +22,7 @@ d=s.indexOf('e');
 }
 }
 //System.out.println(a+"  "+b+"  "+c+"  "+d);
-if((a!=-1 && b!=-1 && c!=-1 && d!=-1))
+if((a!=-1 && b!=-1 && c!=-1 && d!=-1)) 
 System.out.println("I love you, too!");
 else
 System.out.println("Let us breakup!");
