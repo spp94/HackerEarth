@@ -17,7 +17,7 @@ public static void main(String...args)throws IOException
 		{
 			a[j]=Long.parseLong(str[j]);
 		/*	if(a[j]<min)
-			min=a[j];
+			min=a[j]; 
 			else if(a[j]>max)
 			max=a[j];*/
 		}
