@@ -29,7 +29,7 @@ System.out.println();*/
 Arrays.sort(w);
 /*for(int i=0;i<6;i++)
 System.out.println(w[i]);*/
-String s="";
+String s=""; 
 for(int i=0;i<6;i++)
 {
 s=s+w[i];
