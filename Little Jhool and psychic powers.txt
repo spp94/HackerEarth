@@ -9,5 +9,5 @@ if(s.contains("000000") || s.contains("111111"))
 System.out.println("Sorry, sorry!");
 else
 System.out.println("Good luck!");
-}
+} 
 }
