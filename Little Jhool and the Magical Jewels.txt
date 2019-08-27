@@ -10,7 +10,7 @@ char ch=s.charAt(i);
 if(ch=='r')
 c1++;
 if(ch=='u')
-c2++;
+c2++; 
 if(ch=='b')
 c3++;
 if(ch=='y')
