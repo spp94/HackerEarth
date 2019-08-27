@@ -5,7 +5,7 @@ public static void main(String args[])throws IOException
 {
 BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
 String s=in.readLine();
-String []str=s.split(" ");
+String []str=s.split(" "); 
 int n=Integer.parseInt(str[0]);
 int m=Integer.parseInt(str[1]);
 int a[][]=new int[n][m];
