@@ -7,9 +7,7 @@ public class Main
 {
 
 public static void main(String...args)
-
 {
-
 Scanner sc = new Scanner(System.in);
 
 String[] input = sc.nextLine().trim().split(" ");
@@ -19,16 +17,11 @@ long[] arr = new long[n];
 String[] s = sc.nextLine().trim().split(" ");
 
 for(int i = 0; i < s.length; i++)
-
 {
-
 arr[i] = Long.parseLong(s[i]);
-
 }
-
 int pos = lastIndexOfElement(m,arr);
 System.out.println(pos);
-
 }
 
 
@@ -36,25 +29,16 @@ public static int lastIndexOfElement(long n, long[] arr)
 {
 int count = 0;
 int index = -1;
-
 for(int i  = arr.length-1; i >= 0; i--)
-
 {
-
 if(arr[i] == n)
 {
-
 count = 1;
-
 index = i+1;
-
 break;
-
 }
-
 }
 
 return index;
 }
-
 }
