@@ -3,7 +3,7 @@ class karanstrings
 {
 void display(String s)
 {
-s=s+" ";
+s=s+" "; 
 int l=s.length();
 for(int j=0;j<l-1;j++)
 {
