@@ -1,4 +1,4 @@
-import java.io.*;
+import java.io.*; 
 class Alienlanguage
 {
 void display(String s,String s1)
