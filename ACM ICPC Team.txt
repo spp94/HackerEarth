@@ -7,7 +7,6 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
-
     // Complete the acmTeam function below.
     static int[] acmTeam(String[] topic) 
     {
