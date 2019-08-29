@@ -2,7 +2,7 @@
 #define ll long long int
 using namespace std;
 int main()
-{
+{ 
 ll t,n,i;
 cin>>t;
 cin>>n;
