@@ -36,7 +36,6 @@ public class Solution {
             long arItem = Long.parseLong(arItems[i]);
             ar[i] = arItem;
         }
-
         long result = aVeryBigSum(ar);
 
         bufferedWriter.write(String.valueOf(result));
