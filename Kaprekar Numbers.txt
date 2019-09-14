@@ -22,15 +22,16 @@ public class Solution {
         }
     }
     static boolean isKarpekar(int n){
-        long square = (long)(n*n);
-        String s = square+"";
+        BigInteger square1 = new BigInteger(n+"");
+        BigInteger square2 = new BigInteger(n+"");
+        BigInteger square = square1.multiply(square2);
+        String s = square.toString();
         int l = s.length();
         int d = (l%2 == 0) ? l/2 : (l+1)/2;
         int mid = l/2;
         String s1 = s.substring(0,l-d);
         String s2 = s.substring(l-d);
-        System.out.println(s1+" "+s2);
-        if(s.length() == 1)  return (square == (long)n);
+        if(s.length() == 1)  return (square.compareTo(new BigInteger(n+"")) == 0);
         else{
         if(Long.parseLong(s1)+Long.parseLong(s2) == (long)n){
             return true;
