@@ -1,92 +1,53 @@
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
-using System.Text;
-using System;
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-class Solution {
+public class Solution {
 
     // Complete the equalizeArray function below.
     static int equalizeArray(int[] arr) {
-       int[] frequency = new int[101];
-            for(int j = 0; j < arr.Length; j++)
-            {
-                frequency[arr[j]]++;
+        int[] f = new int[101];
+        for(int i = 0; i < arr.length; i++){
+            f[arr[i]]++;
+        }
+        int max = 0;
+        for(Integer i : f){
+            if(i > max){
+                max = i;
             }
-
-
-            int max = 0, count = 0, min = 100;
-            foreach (var item in frequency)
-            {
-                if(item >= max && item != 0)
-                {
-                    max = item;
-                }
-                if(item <= min && item != 0)
-                {
-                    min = item;
-                }
-            }
-
-            int c = 0;
-            foreach (var item in frequency)
-            {
-                if(item == max)
-                {
-                    c += 1;
-                }
-            }
-            
-                if(min != max)
-                {
-                foreach (var item in frequency)
-                {
-                    if (item != max && item != 0)
-                    {
-                        count += item;
-                    }
-                    if(item == max && c > 1)
-                    {
-                        count += item;
-                        c -= 1;
-                    }
-                }
-                return(count);
-                }
-                else
-                {
-                foreach (var item in frequency)
-                {
-                    if(item == min && item != 0)
-                    {
-                        count += 1;
-                    }
-                }
-
-                return((count-1)*min); 
-                }
+        }
+        return arr.length - max;
     }
 
-    static void Main(string[] args) {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+    private static final Scanner scanner = new Scanner(System.in);
 
-        int n = Convert.ToInt32(Console.ReadLine());
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
-        ;
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int[] arr = new int[n];
+
+        String[] arrItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < n; i++) {
+            int arrItem = Integer.parseInt(arrItems[i]);
+            arr[i] = arrItem;
+        }
+
         int result = equalizeArray(arr);
 
-        textWriter.WriteLine(result);
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
 
-        textWriter.Flush();
-        textWriter.Close();
+        bufferedWriter.close();
+
+        scanner.close();
     }
 }
