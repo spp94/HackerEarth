@@ -1,4 +1,4 @@
-/* IMPORTANT: class must not be public. */
+/* IMPORTANT: class must not be public. */ 
  
  
 import java.io.BufferedReader;
