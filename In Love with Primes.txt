@@ -1,4 +1,4 @@
-import java.io.*;
+import java.io.*; 
 class Love_With_Primes
 {
 int prime(int n)
