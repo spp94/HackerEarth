@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;
 class icpcteam
 {
 public static void main(String args[])throws IOException
