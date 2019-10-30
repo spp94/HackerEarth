@@ -1,4 +1,4 @@
-from __future__ import division
+from __future__ import division 
 
 def average(array):
     return sum(set(array))/len(set(array))
