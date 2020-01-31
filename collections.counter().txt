@@ -1,4 +1,4 @@
-import collections  
+import collections   
 
 X = int(raw_input())
 sizes = collections.Counter(map(int, raw_input().split()))
