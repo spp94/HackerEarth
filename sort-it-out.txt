@@ -29,7 +29,7 @@ int temp1 = arr[j];
 
 arr[j] = arr[j+1];
 
-arr[j+1] = temp1;
+arr[j+1] = temp1; 
 int temp2 = pos[j];
 
 pos[j] = pos[j+1];
