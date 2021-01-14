@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;
 class game_of_numbers
 {
 public static void main(String args[])throws IOException
