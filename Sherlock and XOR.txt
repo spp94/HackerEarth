@@ -1,5 +1,5 @@
 /* IMPORTANT: class must not be public. */
- 
+  
 /*
  * uncomment this if you want to read input.
 import java.io.BufferedReader;
