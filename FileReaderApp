@@ -1,0 +1,65 @@
+import java.util.*;
+import java.io.*;
+
+class Student {
+    String name;
+    int marks;
+    public Student(String name, int marks){
+        this.name = name;
+        this.marks = marks;    }
+}
+
+class marksSorter implements Comparator<Student>{
+    @Override
+    public int compare(Student s1, Student s2){
+        return s2.marks - s1.marks;
+    }
+}
+
+class nameSorter implements Comparator<Student>{
+    @Override
+    public int compare(Student s1, Student s2){
+        return s1.name.compareTo(s2.name);
+    }
+}
+
+public class Program{
+    public static void main(String[] args){
+        BufferedReader reader = null;
+        BufferedWriter writer = null;
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader("C:\\Users\\shubh\\Desktop\\input.txt"));
+            String currentLine = reader.readLine();
+            while (currentLine != null){
+                String[] student = currentLine.split(" ");
+                students.add(new Student(student[0], Integer.parseInt(student[1])));
+
+                currentLine = reader.readLine();
+            }
+
+            Collections.sort(students, new nameSorter());
+
+            writer = new BufferedWriter(new FileWriter("C:\\Users\\shubh\\Desktop\\output.txt"));
+
+            for(Student student: students){
+                writer.write(student.name + " " + student.marks);
+                writer.newLine();
+            }
+
+            System.out.println("File read successfully");
+        }
+        catch (Exception ex){
+            System.out.println("File reading failed");
+        }
+        finally {
+            try{
+                if(reader != null)  reader.close();
+                if(writer != null)  writer.close();
+            }
+            catch (Exception ex){
+                System.out.println(ex);
+            }
+        }
+    }
+}
