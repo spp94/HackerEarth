@@ -1,0 +1,33 @@
+import java.util.*;
+import java.io.*;
+
+public class Program{
+    public static void main(String[] args){
+        BufferedWriter bufferedWriter = null;
+        FileWriter fileWriter = null;
+        PrintWriter printWriter = null;
+        try{
+            fileWriter = new FileWriter("C:\\Users\\shubh\\Desktop\\input.txt", true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            printWriter = new PrintWriter(bufferedWriter);
+            printWriter.println();
+            printWriter.println("Shubham Prakash: 1234567");
+            printWriter.println("Satyam Prakash: 68794393");
+            printWriter.println("Atharwa Prakash: 563463353");
+            System.out.println("File appended successfully");
+        }
+        catch (Exception ex){
+            System.out.println("File appended failed");
+        }
+        finally {
+            try{
+                if(printWriter != null) printWriter.close();
+                if(bufferedWriter != null) bufferedWriter.close();
+                if(fileWriter != null) fileWriter.close();
+            }
+            catch (Exception ex){
+                System.out.println(ex);
+            }
+        }
+    }
+}
