@@ -1,4 +1,4 @@
-import java.io.*;
+import java.io.*; 
 class count_the_characters
 {
 public static void main(String args[])throws IOException
