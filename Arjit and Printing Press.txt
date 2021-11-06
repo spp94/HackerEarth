@@ -31,7 +31,6 @@ Arrays.sort(s2);
 int count=0,i=0;
 
 while(count<s2.length && i<s1.length)
-
 {
 
 if(s2[count]<s1[i])
