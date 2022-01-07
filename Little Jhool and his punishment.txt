@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;  
 class little_jhool_and_his_punishment
 {
 public static void main(String args[])throws IOException
