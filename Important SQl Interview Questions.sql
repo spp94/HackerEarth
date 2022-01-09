@@ -1,8 +1,8 @@
--- Q-1. Write An SQL Query To Fetch ìFIRST_NAMEî From Worker Table Using The Alias Name As <WORKER_NAME>.
+-- Q-1. Write An SQL Query To Fetch ‚ÄúFIRST_NAME‚Äù From Worker Table Using The Alias Name As <WORKER_NAME>. 
 
 SELECT FIRST_NAME AS WORKER_NAME FROM WORKER
 
--- Q-2. Write An SQL Query To Fetch ìFIRST_NAMEî From Worker Table In Upper Case.
+-- Q-2. Write An SQL Query To Fetch ‚ÄúFIRST_NAME‚Äù From Worker Table In Upper Case.
 
 SELECT UPPER(FIRST_NAME) FROM WORKER
 
@@ -17,7 +17,7 @@ SELECT DISTINCT DEPARTMENT FROM WORKER
 SELECT SUBSTRING(FIRST_NAME, 1, 3) FROM WORKER
 
 
--- Q-5. Write An SQL Query To Find The Position Of The Alphabet (ëAí) In The First Name Column ëAmitabhí
+-- Q-5. Write An SQL Query To Find The Position Of The Alphabet (‚ÄòA‚Äô) In The First Name Column ‚ÄòAmitabh‚Äô
 --      From Worker Table.
 
 
@@ -40,7 +40,7 @@ SELECT LTRIM(FIRST_NAME) FROM WORKER
 SELECT DISTINCT(DEPARTMENT) AS DEPARTMENT, LEN(DEPARTMENT) AS DEPARTMENTLENGHT FROM WORKER
 
 
--- Q-9. Write An SQL Query To Print The FIRST_NAME From Worker Table After Replacing ëAí With ëAí.
+-- Q-9. Write An SQL Query To Print The FIRST_NAME From Worker Table After Replacing ‚ÄòA‚Äô With ‚ÄòA‚Äô.
 
 SELECT REPLACE(FIRST_NAME,'a','A') FROM WORKER
 
@@ -64,33 +64,33 @@ SELECT * FROM WORKER ORDER BY FIRST_NAME ASC
 SELECT * FROM WORKER ORDER BY FIRST_NAME ASC, DEPARTMENT DESC
 
 
--- Q-13. Write An SQL Query To Print Details For Workers With The First Name As ìVipulî And ìSatishî From Worker Table.
+-- Q-13. Write An SQL Query To Print Details For Workers With The First Name As ‚ÄúVipul‚Äù And ‚ÄúSatish‚Äù From Worker Table.
 
 SELECT * FROM WORKER WHERE FIRST_NAME IN ('VIPUL','SATISH')
 
 
--- Q-14. Write An SQL Query To Print Details Of Workers Excluding First Names, ìVipulî And ìSatishî From Worker Table.
+-- Q-14. Write An SQL Query To Print Details Of Workers Excluding First Names, ‚ÄúVipul‚Äù And ‚ÄúSatish‚Äù From Worker Table.
 
 SELECT * FROM WORKER WHERE FIRST_NAME NOT IN('VIPUL','SATISH')
 
 
--- Q-15. Write An SQL Query To Print Details Of Workers With DEPARTMENT Name As ìAdminî.
+-- Q-15. Write An SQL Query To Print Details Of Workers With DEPARTMENT Name As ‚ÄúAdmin‚Äù.
 
 SELECT * FROM WORKER WHERE DEPARTMENT = 'ADMIN'
 
 
 
--- Q-16. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Contains ëAí.
+-- Q-16. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Contains ‚ÄòA‚Äô.
 
 SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%A%'
 
 
--- Q-17. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Ends With ëAí.
+-- Q-17. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Ends With ‚ÄòA‚Äô.
 
 SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%A'
 
 
--- Q-18. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Ends With ëHí And Contains Six Alphabets.
+-- Q-18. Write An SQL Query To Print Details Of The Workers Whose FIRST_NAME Ends With ‚ÄòH‚Äô And Contains Six Alphabets.
 
 
 SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%H' AND LEN(FIRST_NAME) = 6
@@ -102,12 +102,12 @@ SELECT * FROM WORKER WHERE FIRST_NAME LIKE '%H' AND LEN(FIRST_NAME) = 6
 SELECT * FROM WORKER WHERE SALARY BETWEEN 100000 AND 500000
 
 
--- Q-20. Write An SQL Query To Print Details Of The Workers Who Have Joined In MARCHí2019.
+-- Q-20. Write An SQL Query To Print Details Of The Workers Who Have Joined In MARCH‚Äô2019.
 
 SELECT * FROM WORKER WHERE YEAR(JOINING_DATE) = 2019 AND MONTH(JOINING_DATE) = 3
 
 
--- Q-21. Write An SQL Query To Fetch The Count Of Employees Working In The Department ëAdminí.
+-- Q-21. Write An SQL Query To Fetch The Count Of Employees Working In The Department ‚ÄòAdmin‚Äô.
 
 select count(worker_id) from worker where department='admin';
 
