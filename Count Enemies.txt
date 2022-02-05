@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;
 class Count_Enemies_5
 {
 public static void main(String...args)throws IOException
