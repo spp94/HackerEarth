@@ -14,7 +14,7 @@ public class Main
 		int n = sc.nextInt(), min = 0, max = 0;
 		sc.nextLine();
 		String s = sc.nextLine();
-		s = s.replaceAll("w", "vv");
+		s = s.replaceAll("w", "vv"); 
 		//System.out.println(s.length());
 		max = s.length();
 		s = s.replaceAll("vv", "w");
